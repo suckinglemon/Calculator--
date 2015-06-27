@@ -75,6 +75,50 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+        // OnClickListener for button clear
+        Button buttonC = (Button) findViewById(R.id.button_c);
+        buttonC.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                int l = stringBuffer.length() - 1;
+                if (l > 0) {
+                    stringBuffer.deleteCharAt(l);
+                    input.setText(stringBuffer.toString());
+                } else if (l == 0){
+                    stringBuffer.deleteCharAt(0);
+                    input.setText(" ");
+                } else {
+                    input.setText(" ");
+                }
+            }
+        });
+
+        // OnClickListener for button clear entirely
+        Button buttonCE = (Button) findViewById(R.id.button_ce);
+        buttonCE.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Intent mode = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(mode);
+            }
+        });
+
+        // OnClickListener for button open bracket
+        Button buttonOpenBracket = (Button) findViewById(R.id.button_open_bracket);
+        buttonOpenBracket.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                stringBuffer.append(" ( ");
+                input.setText(stringBuffer.toString());
+            }
+        });
+
+        // OnClickListener for button close bracket
+        Button buttonCloseBracket = (Button) findViewById(R.id.button_close_bracket);
+        buttonCloseBracket.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                stringBuffer.append(" ) ");
+                input.setText(stringBuffer.toString());
+            }
+        });
+
         // OnClickListener for button point
         Button buttonPoint = (Button) findViewById(R.id.button_point);
         buttonPoint.setOnClickListener(new View.OnClickListener() {

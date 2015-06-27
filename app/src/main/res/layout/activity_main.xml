@@ -226,4 +226,51 @@
             android:layout_weight="1"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout4"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout5"
+        android:visibility="visible">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:text="CE"
+            android:id="@+id/button_ce"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"/>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:text="C"
+            android:id="@+id/button_c"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"/>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:text="("
+            android:id="@+id/button_open_bracket"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"/>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:text=")"
+            android:id="@+id/button_close_bracket"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
 </RelativeLayout>

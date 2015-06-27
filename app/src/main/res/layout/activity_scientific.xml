@@ -266,7 +266,7 @@
             android:layout_width="fill_parent"
             android:layout_height="50dp"
             android:text="("
-            android:id="@+id/button_kl_auf"
+            android:id="@+id/button_open_bracket"
             android:layout_gravity="bottom"
             android:layout_weight="1"/>
 
@@ -275,7 +275,7 @@
             android:layout_width="fill_parent"
             android:layout_height="50dp"
             android:text=")"
-            android:id="@+id/button_kl_zu"
+            android:id="@+id/button_close_bracket"
             android:layout_gravity="bottom"
             android:layout_weight="1"/>
 
