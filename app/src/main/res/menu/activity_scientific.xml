@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.cmm.dev.calculator__.Activity_Scientific">
+
+    <item android:id="@+id/action_simple_mode" android:title="@string/action_simple_mode"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+    <item android:id="@+id/action_scientific_mode" android:title="@string/action_scientific_mode"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+    <item android:id="@+id/action_programmer_mode" android:title="@string/action_programmer_mode"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+</menu>

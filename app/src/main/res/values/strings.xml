@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Calculator--</string>
+
+    <string name="action_simple_mode">Simple Mode</string>
+    <string name="action_scientific_mode">Scientific Mode</string>
+    <string name="action_programmer_mode">Programmer Mode</string>
+
+</resources>
