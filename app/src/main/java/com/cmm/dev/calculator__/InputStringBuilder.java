@@ -1,25 +1,27 @@
 package com.cmm.dev.calculator__;
 
-import android.view.View;
 
 /**
  * Created by Johann on 26.06.2015.
  */
 public class InputStringBuilder {
 
-    private StringBuffer inputBuffer = new StringBuffer();
-    public String outcomeString = new String("");
+    private StringBuffer inputBuffer;
+    public String outcomeString;
 
-    public void appendNumber1 (View view) {
-        inputBuffer.append("1");
+    // Konstruktor
+    public void inputStringBuilder () {
+        inputBuffer = new StringBuffer();
+        outcomeString = "";
+    }
+
+    // Hängt Zahl an inputBuffer an
+    public void appendNumber (char c) {
+        inputBuffer.append(c);
         updateTextView();
     }
 
-    private void saveInHistory () {
-
-    }
-
-    private void updateTextView () {
+    private static void updateTextView () {
 
 
     }

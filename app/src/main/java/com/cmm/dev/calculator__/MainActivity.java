@@ -14,6 +14,9 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //setContentView(findViewById(R.id.textOutput));
+
+        InputStringBuilder isb = new InputStringBuilder();
+        isb.appendNumber('1');
     }
 
     @Override
