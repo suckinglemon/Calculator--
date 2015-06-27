@@ -35,6 +35,7 @@ public class MainActivity extends ActionBarActivity {
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 // TODO
+                output.setText("= ");
             }
         });
 
