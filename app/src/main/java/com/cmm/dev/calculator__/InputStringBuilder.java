@@ -12,7 +12,6 @@ public class InputStringBuilder {
 
     public void appendNumber1 (View view) {
         inputBuffer.append("1");
-        saveInHistory();
         updateTextView();
     }
 
