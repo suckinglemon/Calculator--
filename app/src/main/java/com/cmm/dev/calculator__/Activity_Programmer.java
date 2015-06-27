@@ -5,13 +5,20 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class Activity_Programmer extends ActionBarActivity {
 
+    // In- / Output
+    TextView input;
+    TextView output;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Load required XML
         setContentView(R.layout.activity_programmer);
     }
 

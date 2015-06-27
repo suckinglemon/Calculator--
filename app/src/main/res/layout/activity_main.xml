@@ -29,13 +29,12 @@
             android:autoText="false"
             android:textColor="#ffffff"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:text="5 + 8 / 4" />
+            android:paddingBottom="10dp" />
 
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="= 7 Simple"
+            android:text="Simple"
             android:id="@+id/textOutput"
             android:textSize="30dp"
             android:gravity="top|left"
