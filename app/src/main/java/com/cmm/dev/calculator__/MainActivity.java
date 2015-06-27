@@ -5,18 +5,48 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
 
+    TextView input;
+    TextView output;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        //setContentView(findViewById(R.id.textOutput));
 
-        InputStringBuilder isb = new InputStringBuilder();
-        isb.appendNumber('1');
+        // Load required XML
+        setContentView(R.layout.activity_main);
+
+        // StringBuffer for input string gerneration
+        final StringBuffer stringBuffer = new StringBuffer("");
+
+        // load TextView from layout
+        input = (TextView) findViewById(R.id.textInput);
+        output = (TextView) findViewById(R.id.textOutput);
+
+        // OnClickListener for button point
+        Button buttonPoint = (Button) findViewById(R.id.button_point);
+        buttonPoint.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                stringBuffer.append('.');
+                input.setText(stringBuffer.toString());
+            }
+        });
+
+        // OnClickListener for button number 0
+        Button buttonNum0 = (Button) findViewById(R.id.button_num_0);
+        buttonNum0.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                stringBuffer.append('0');
+                input.setText(stringBuffer.toString());
+            }
+        });
+
     }
 
     @Override
@@ -56,5 +86,4 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
 }

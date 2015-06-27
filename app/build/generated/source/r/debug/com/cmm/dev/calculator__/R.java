@@ -1332,7 +1332,6 @@ containing a value of this type.
         public static final int always=0x7f0c0016;
         public static final int beginning=0x7f0c0013;
         public static final int button_add=0x7f0c0046;
-        public static final int button_comma=0x7f0c0043;
         public static final int button_cos=0x7f0c0058;
         public static final int button_div=0x7f0c0055;
         public static final int button_e=0x7f0c005c;
@@ -1354,6 +1353,7 @@ containing a value of this type.
         public static final int button_num_8=0x7f0c0053;
         public static final int button_num_9=0x7f0c0054;
         public static final int button_pi=0x7f0c0063;
+        public static final int button_point=0x7f0c0043;
         public static final int button_pow=0x7f0c0060;
         public static final int button_sin=0x7f0c0057;
         public static final int button_sqrt=0x7f0c0061;
