@@ -9,15 +9,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.Iterator;
-import java.util.StringTokenizer;
-
 
 public class MainActivity extends ActionBarActivity {
 
     // In- / Output
     TextView input;
     TextView output;
+
+    // StringBuffer for input string generation
+    StringBuffer stringBuffer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +26,8 @@ public class MainActivity extends ActionBarActivity {
         // Load required XML
         setContentView(R.layout.activity_main);
 
-        // StringBuffer for input string generation
-        final StringBuffer stringBuffer = new StringBuffer("");
+        // new StringBuffer for input string generation
+        stringBuffer = new StringBuffer("");
 
         // load TextView from layout
         input = (TextView) findViewById(R.id.textInput);
@@ -102,8 +102,9 @@ public class MainActivity extends ActionBarActivity {
         Button buttonCE = (Button) findViewById(R.id.button_ce);
         buttonCE.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                Intent mode = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(mode);
+                stringBuffer = new StringBuffer("");
+                input.setText(" ");
+                output.setText(" ");
             }
         });
 

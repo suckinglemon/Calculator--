@@ -16,6 +16,9 @@ public class Activity_Scientific extends ActionBarActivity {
     TextView input;
     TextView output;
 
+    // StringBuffer for input string generation
+    StringBuffer stringBuffer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,8 +26,8 @@ public class Activity_Scientific extends ActionBarActivity {
         // Load required XML
         setContentView(R.layout.activity_scientific);
 
-        // StringBuffer for input string gerneration
-        final StringBuffer stringBuffer = new StringBuffer("");
+        // new StringBuffer for input string generation
+        stringBuffer = new StringBuffer("");
 
         // load TextView from layout
         input = (TextView) findViewById(R.id.textInput);
@@ -134,8 +137,9 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonCE = (Button) findViewById(R.id.button_ce);
         buttonCE.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                Intent mode = new Intent(getApplicationContext(), Activity_Scientific.class);
-                startActivity(mode);
+                stringBuffer = new StringBuffer("");
+                input.setText(" ");
+                output.setText(" ");
             }
         });
 

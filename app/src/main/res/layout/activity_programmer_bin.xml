@@ -61,7 +61,7 @@
             android:id="@+id/button_point"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:visibility="invisible" />
+            android:visibility="visible" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
