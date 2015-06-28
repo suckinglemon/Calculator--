@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Iterator;
+import java.util.StringTokenizer;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -23,7 +26,7 @@ public class MainActivity extends ActionBarActivity {
         // Load required XML
         setContentView(R.layout.activity_main);
 
-        // StringBuffer for input string gerneration
+        // StringBuffer for input string generation
         final StringBuffer stringBuffer = new StringBuffer("");
 
         // load TextView from layout
@@ -83,11 +86,14 @@ public class MainActivity extends ActionBarActivity {
                 if (l > 0) {
                     stringBuffer.deleteCharAt(l);
                     input.setText(stringBuffer.toString());
+                    output.setText(" ");
                 } else if (l == 0){
                     stringBuffer.deleteCharAt(0);
                     input.setText(" ");
+                    output.setText(" ");
                 } else {
                     input.setText(" ");
+                    output.setText(" ");
                 }
             }
         });
@@ -98,24 +104,6 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 Intent mode = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(mode);
-            }
-        });
-
-        // OnClickListener for button open bracket
-        Button buttonOpenBracket = (Button) findViewById(R.id.button_open_bracket);
-        buttonOpenBracket.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                stringBuffer.append(" ( ");
-                input.setText(stringBuffer.toString());
-            }
-        });
-
-        // OnClickListener for button close bracket
-        Button buttonCloseBracket = (Button) findViewById(R.id.button_close_bracket);
-        buttonCloseBracket.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                stringBuffer.append(" ) ");
-                input.setText(stringBuffer.toString());
             }
         });
 
@@ -234,12 +222,12 @@ public class MainActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //Change Activity to Simple Mode if Item selected
+        /*//Change Activity to Simple Mode if Item selected
         if (id == R.id.action_simple_mode) {
             Intent mode = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(mode);
             return true;
-        }
+        }*/
 
         //Change Activity to Scientific Mode if Item selected
         if (id == R.id.action_scientific_mode) {

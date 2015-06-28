@@ -5,7 +5,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.cmm.dev.calculator__.Activity_Scientific"
+    tools:context="com.cmm.dev.calculator__.Activity_Programmer"
     android:padding="0dp"
     android:background="#000000">
 
@@ -33,7 +33,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Scientific"
+            android:text="Programmer"
             android:id="@+id/textOutput"
             android:textSize="30dp"
             android:gravity="top|left"
@@ -56,53 +56,39 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:text="."
             android:id="@+id/button_point"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:textStyle="bold" />
+            android:visibility="invisible" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:text="0"
             android:id="@+id/button_num_0"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
+            android:layout_weight="1"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:text="="
             android:id="@+id/button_eqal"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
+            android:layout_weight="1"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:text="+"
             android:id="@+id/button_add"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
-
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:text="C"
-            android:textAllCaps="false"
-            android:id="@+id/button_c"
-            android:layout_weight="1"
-            android:textStyle="bold" />
-
+            android:layout_weight="1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -116,53 +102,38 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:text="1"
             android:id="@+id/button_num_1"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
+            android:layout_weight="1"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:text="2"
             android:id="@+id/button_num_2"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
+            android:layout_weight="1"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:text="3"
             android:id="@+id/button_num_3"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
+            android:layout_weight="1"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:text="-"
             android:id="@+id/button_sub"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
-
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:text="CE"
-            android:textAllCaps="false"
-            android:id="@+id/button_ce"
-            android:layout_weight="1"
-            android:textStyle="bold" />
-
+            android:layout_weight="1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -176,52 +147,38 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:text="4"
             android:id="@+id/button_num_4"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
+            android:layout_weight="1"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:text="5"
             android:id="@+id/button_num_5"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
+            android:layout_weight="1"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:text="6"
             android:id="@+id/button_num_6"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
+            android:layout_weight="1"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:text="*"
             android:id="@+id/button_mul"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
-
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:text="π"
-            android:textAllCaps="false"
-            android:id="@+id/button_pi"
-            android:layout_weight="1"
-            android:textStyle="bold" />
+            android:layout_weight="1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -235,52 +192,38 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:text="7"
             android:id="@+id/button_num_7"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
+            android:layout_weight="1"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:text="8"
             android:id="@+id/button_num_8"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
+            android:layout_weight="1"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:text="9"
             android:id="@+id/button_num_9"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
+            android:layout_weight="1"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:text="/"
             android:id="@+id/button_div"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
-
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:text="e"
-            android:textAllCaps="false"
-            android:id="@+id/button_e"
-            android:layout_weight="1"
-            android:textStyle="bold" />
+            android:layout_weight="1"/>
     </LinearLayout>
 
     <LinearLayout
@@ -295,53 +238,63 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:text="sin"
-            android:id="@+id/button_sin"
+            android:layout_height="45dp"
+            android:text="A"
+            android:id="@+id/button_alph_a"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:textStyle="bold" />
+            android:visibility="visible"
+            android:clickable="false" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:text="cos"
-            android:id="@+id/button_cos"
+            android:layout_height="45dp"
+            android:text="B"
+            android:id="@+id/button_alph_b"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:textStyle="bold" />
+            android:visibility="visible" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:text="tan"
-            android:id="@+id/button_tan"
+            android:layout_height="45dp"
+            android:text="C"
+            android:id="@+id/button_alph_c"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:textStyle="bold" />
+            android:visibility="visible" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:text="("
-            android:id="@+id/button_open_bracket"
+            android:layout_height="45dp"
+            android:text="D"
+            android:id="@+id/button_alph_d"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:textStyle="bold" />
+            android:visibility="visible" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:text=")"
-            android:id="@+id/button_close_bracket"
+            android:layout_height="45dp"
+            android:text="E"
+            android:id="@+id/button_alph_e"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:textStyle="bold" />
+            android:visibility="visible" />
 
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:text="F"
+            android:textAllCaps="false"
+            android:id="@+id/button_alph_f"
+            android:layout_weight="1"
+            android:visibility="visible" />
     </LinearLayout>
 
     <LinearLayout
@@ -359,54 +312,48 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:text="ln"
-            android:id="@+id/button_ln"
+            android:layout_height="50dp"
+            android:text="TO DEZ"
+            android:id="@+id/button_to_dez"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
+            android:layout_weight="1" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:text="log"
-            android:id="@+id/button_log"
+            android:layout_height="50dp"
+            android:text="TO BIN"
+            android:id="@+id/button_to_bin"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
+            android:layout_weight="1"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:text="x˟"
+            android:layout_height="50dp"
+            android:text="to HEX"
+            android:id="@+id/button_to_hex"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:visibility="gone" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:text="CE"
+            android:id="@+id/button_ce"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"/>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:text="C"
             android:textAllCaps="false"
-            android:id="@+id/button_pow"
-            android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
-
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:text="√"
-            android:id="@+id/button_sqrt"
-            android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
-
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:text="!"
-            android:id="@+id/button_fak"
-            android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:textStyle="bold" />
-
+            android:id="@+id/button_c"
+            android:layout_weight="1"/>
     </LinearLayout>
 
 </RelativeLayout>

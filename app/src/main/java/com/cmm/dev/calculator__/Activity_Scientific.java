@@ -30,6 +30,37 @@ public class Activity_Scientific extends ActionBarActivity {
         input = (TextView) findViewById(R.id.textInput);
         output = (TextView) findViewById(R.id.textOutput);
 
+        // OnClickListener for button ln
+        Button buttonLn = (Button) findViewById(R.id.button_ln);
+        buttonLn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                stringBuffer.append(" LN( ");
+                input.setText(stringBuffer.toString());
+                output.setText(" ");
+            }
+        });
+
+        // OnClickListener for button open bracket
+        Button buttonOpenBracket = (Button) findViewById(R.id.button_open_bracket);
+        buttonOpenBracket.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                stringBuffer.append(" ( ");
+                input.setText(stringBuffer.toString());
+                output.setText(" ");
+            }
+        });
+
+        // OnClickListener for button close bracket
+        Button buttonCloseBracket = (Button) findViewById(R.id.button_close_bracket);
+        buttonCloseBracket.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                stringBuffer.append(" ) ");
+                input.setText(stringBuffer.toString());
+                output.setText(" ");
+            }
+        });
+
+        // Same as Simple
         // OnClickListener for button equal
         Button buttonEqual = (Button) findViewById(R.id.button_eqal);
         buttonEqual.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +76,7 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append(" + ");
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -54,6 +86,7 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append(" - ");
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -63,6 +96,7 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append(" * ");
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -72,6 +106,36 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append(" / ");
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
+            }
+        });
+
+        // OnClickListener for button clear
+        Button buttonC = (Button) findViewById(R.id.button_c);
+        buttonC.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                int l = stringBuffer.length() - 1;
+                if (l > 0) {
+                    stringBuffer.deleteCharAt(l);
+                    input.setText(stringBuffer.toString());
+                    output.setText(" ");
+                } else if (l == 0){
+                    stringBuffer.deleteCharAt(0);
+                    input.setText(" ");
+                    output.setText(" ");
+                } else {
+                    input.setText(" ");
+                    output.setText(" ");
+                }
+            }
+        });
+
+        // OnClickListener for button clear entirely
+        Button buttonCE = (Button) findViewById(R.id.button_ce);
+        buttonCE.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Intent mode = new Intent(getApplicationContext(), Activity_Scientific.class);
+                startActivity(mode);
             }
         });
 
@@ -81,6 +145,7 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('.');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -90,6 +155,7 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('0');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -99,6 +165,7 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('1');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -108,6 +175,7 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('2');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -117,6 +185,7 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('3');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -126,6 +195,7 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('4');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -135,6 +205,7 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('5');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -144,6 +215,7 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('6');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -153,6 +225,7 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('7');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -162,6 +235,7 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('8');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -171,6 +245,7 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('9');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
     }
@@ -196,12 +271,12 @@ public class Activity_Scientific extends ActionBarActivity {
             return true;
         }
 
-        //Change Activity to Scientific Mode if Item selected
+        /*//Change Activity to Scientific Mode if Item selected
         if (id == R.id.action_scientific_mode) {
             Intent mode = new Intent(getApplicationContext(), Activity_Scientific.class);
             startActivity(mode);
             return true;
-        }
+        }*/
 
         //Change Activity to Programmer Mode if Item selected
         if (id == R.id.action_programmer_mode) {

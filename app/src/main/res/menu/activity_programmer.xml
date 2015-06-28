@@ -9,7 +9,13 @@
     <item android:id="@+id/action_scientific_mode" android:title="@string/action_scientific_mode"
         android:orderInCategory="100" app:showAsAction="never" />
 
-    <item android:id="@+id/action_programmer_mode" android:title="@string/action_programmer_mode"
+    <item android:id="@+id/action_programmer_mode_dez" android:title="@string/action_programmer_mode_dez"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+    <item android:id="@+id/action_programmer_mode_bin" android:title="@string/action_programmer_mode_bin"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+    <item android:id="@+id/action_programmer_mode_hex" android:title="@string/action_programmer_mode_hex"
         android:orderInCategory="100" app:showAsAction="never" />
 
 </menu>
