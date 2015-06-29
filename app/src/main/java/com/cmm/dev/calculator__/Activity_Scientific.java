@@ -37,7 +37,7 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonSin = (Button) findViewById(R.id.button_sin);
         buttonSin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" SIN( ");
+                stringBuffer.append("SIN( ");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -47,7 +47,7 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonCos = (Button) findViewById(R.id.button_cos);
         buttonCos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" COS( ");
+                stringBuffer.append("COS( ");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -57,7 +57,7 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonTan = (Button) findViewById(R.id.button_tan);
         buttonTan.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" TAN( ");
+                stringBuffer.append("TAN( ");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -67,7 +67,7 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonLn = (Button) findViewById(R.id.button_ln);
         buttonLn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" LN( ");
+                stringBuffer.append("LN( ");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -77,7 +77,7 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonLog = (Button) findViewById(R.id.button_log);
         buttonLog.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" LOG( ");
+                stringBuffer.append("LOG( ");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -128,6 +128,26 @@ public class Activity_Scientific extends ActionBarActivity {
         buttonCloseBracket.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 stringBuffer.append(" ) ");
+                input.setText(stringBuffer.toString());
+                output.setText(" ");
+            }
+        });
+
+        // OnClickListener for button pi
+        Button buttonPi = (Button) findViewById(R.id.button_pi);
+        buttonPi.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                stringBuffer.append("π");
+                input.setText(stringBuffer.toString());
+                output.setText(" ");
+            }
+        });
+
+        // OnClickListener for button e
+        Button buttonE = (Button) findViewById(R.id.button_e);
+        buttonE.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                stringBuffer.append("e");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
