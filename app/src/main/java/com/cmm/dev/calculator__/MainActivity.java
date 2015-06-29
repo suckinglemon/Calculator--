@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Stack;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -18,6 +20,9 @@ public class MainActivity extends ActionBarActivity {
 
     // StringBuffer for input string generation
     StringBuffer stringBuffer;
+
+    // Stack for amount of chars added per append
+    Stack<Integer> amountOfAppendedChars = new Stack<Integer>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,7 @@ public class MainActivity extends ActionBarActivity {
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 stringBuffer.append(" + ");
+                amountOfAppendedChars.push(3);
                 input.setText(stringBuffer.toString());
             }
         });
@@ -56,6 +62,7 @@ public class MainActivity extends ActionBarActivity {
         buttonSub.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 stringBuffer.append(" - ");
+                amountOfAppendedChars.push(3);
                 input.setText(stringBuffer.toString());
             }
         });

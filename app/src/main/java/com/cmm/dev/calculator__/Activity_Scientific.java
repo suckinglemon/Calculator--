@@ -33,11 +33,81 @@ public class Activity_Scientific extends ActionBarActivity {
         input = (TextView) findViewById(R.id.textInput);
         output = (TextView) findViewById(R.id.textOutput);
 
+        // OnClickListener for button sinus
+        Button buttonSin = (Button) findViewById(R.id.button_sin);
+        buttonSin.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                stringBuffer.append(" SIN( ");
+                input.setText(stringBuffer.toString());
+                output.setText(" ");
+            }
+        });
+
+        // OnClickListener for button cosinus
+        Button buttonCos = (Button) findViewById(R.id.button_cos);
+        buttonCos.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                stringBuffer.append(" COS( ");
+                input.setText(stringBuffer.toString());
+                output.setText(" ");
+            }
+        });
+
+        // OnClickListener for button tangens
+        Button buttonTan = (Button) findViewById(R.id.button_tan);
+        buttonTan.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                stringBuffer.append(" TAN( ");
+                input.setText(stringBuffer.toString());
+                output.setText(" ");
+            }
+        });
+
         // OnClickListener for button ln
         Button buttonLn = (Button) findViewById(R.id.button_ln);
         buttonLn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 stringBuffer.append(" LN( ");
+                input.setText(stringBuffer.toString());
+                output.setText(" ");
+            }
+        });
+
+        // OnClickListener for button log
+        Button buttonLog = (Button) findViewById(R.id.button_log);
+        buttonLog.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                stringBuffer.append(" LOG( ");
+                input.setText(stringBuffer.toString());
+                output.setText(" ");
+            }
+        });
+
+        // OnClickListener for button power
+        Button buttonPow = (Button) findViewById(R.id.button_pow);
+        buttonPow.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                stringBuffer.append("^");
+                input.setText(stringBuffer.toString());
+                output.setText(" ");
+            }
+        });
+
+        // OnClickListener for button square root
+        Button buttonSqrt = (Button) findViewById(R.id.button_sqrt);
+        buttonSqrt.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                stringBuffer.append(" √( ");
+                input.setText(stringBuffer.toString());
+                output.setText(" ");
+            }
+        });
+
+        // OnClickListener for button faculty
+        Button buttonFac = (Button) findViewById(R.id.button_fak);
+        buttonFac.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                stringBuffer.append("!");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
