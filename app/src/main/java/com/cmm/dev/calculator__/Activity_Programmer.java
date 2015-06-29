@@ -39,6 +39,100 @@ public class Activity_Programmer extends ActionBarActivity {
         // Set standard input mode
         inputMode = 1;
 
+        setOnClickListeners ();
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_programmer, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //Change Activity to Simple Mode if Item selected
+        if (id == R.id.action_simple_mode) {
+            Intent mode = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(mode);
+            return true;
+        }
+
+        //Change Activity to Scientific Mode if Item selected
+        if (id == R.id.action_scientific_mode) {
+            Intent mode = new Intent(getApplicationContext(), Activity_Scientific.class);
+            startActivity(mode);
+            return true;
+        }
+
+        //Change Activity to Programmer Mode decimal if Item selected
+        if (id == R.id.action_programmer_mode_dez) {
+            // Load required XML
+            setContentView(R.layout.activity_programmer);
+
+            // new StringBuffer for input string generation
+            stringBuffer = new StringBuffer("");
+
+            // load TextView from layout
+            input = (TextView) findViewById(R.id.textInput);
+            output = (TextView) findViewById(R.id.textOutput);
+
+            inputMode = 1;
+
+            setOnClickListeners ();
+
+            return true;
+        }
+
+        //Change Activity to Programmer Mode binary if Item selected
+        if (id == R.id.action_programmer_mode_bin) {
+            // Load required XML
+            setContentView(R.layout.activity_programmer_bin);
+
+            // new StringBuffer for input string generation
+            stringBuffer = new StringBuffer("");
+
+            // load TextView from layout
+            input = (TextView) findViewById(R.id.textInput);
+            output = (TextView) findViewById(R.id.textOutput);
+
+            inputMode = 2;
+
+            setOnClickListeners ();
+
+            return true;
+        }
+
+        //Change Activity to Programmer Mode hexadecimal if Item selected
+        if (id == R.id.action_programmer_mode_hex) {
+            // Load required XML
+            setContentView(R.layout.activity_programmer_hex);
+
+            // new StringBuffer for input string generation
+            stringBuffer = new StringBuffer("");
+
+            // load TextView from layout
+            input = (TextView) findViewById(R.id.textInput);
+            output = (TextView) findViewById(R.id.textOutput);
+
+            inputMode = 3;
+
+            setOnClickListeners ();
+
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void setOnClickListeners () {
+
         // OnClickListener for button to dez
         Button buttonToDez = (Button) findViewById(R.id.button_to_dez);
         buttonToDez.setOnClickListener(new View.OnClickListener() {
@@ -330,84 +424,6 @@ public class Activity_Programmer extends ActionBarActivity {
                 output.setText(" ");
             }
         });
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_programmer, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //Change Activity to Simple Mode if Item selected
-        if (id == R.id.action_simple_mode) {
-            Intent mode = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(mode);
-            return true;
-        }
-
-        //Change Activity to Scientific Mode if Item selected
-        if (id == R.id.action_scientific_mode) {
-            Intent mode = new Intent(getApplicationContext(), Activity_Scientific.class);
-            startActivity(mode);
-            return true;
-        }
-
-        //Change Activity to Programmer Mode decimal if Item selected
-        if (id == R.id.action_programmer_mode_dez) {
-            // Load required XML
-            setContentView(R.layout.activity_programmer);
-
-            /*
-            // load TextView from layout
-            input = (TextView) findViewById(R.id.textInput);
-            output = (TextView) findViewById(R.id.textOutput);
-            */
-
-            inputMode = 1;
-
-            return true;
-        }
-
-        //Change Activity to Programmer Mode binary if Item selected
-        if (id == R.id.action_programmer_mode_bin) {
-            // Load required XML
-            setContentView(R.layout.activity_programmer_bin);
-
-            /*
-            // load TextView from layout
-            input = (TextView) findViewById(R.id.textInput);
-            output = (TextView) findViewById(R.id.textOutput);
-            */
-
-            inputMode = 2;
-
-            return true;
-        }
-
-        //Change Activity to Programmer Mode hexadecimal if Item selected
-        if (id == R.id.action_programmer_mode_hex) {
-            // Load required XML
-            setContentView(R.layout.activity_programmer_hex);
-
-            /*
-            // load TextView from layout
-            input = (TextView) findViewById(R.id.textInput);
-            output = (TextView) findViewById(R.id.textOutput);
-            */
-
-            inputMode = 3;
-
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }
