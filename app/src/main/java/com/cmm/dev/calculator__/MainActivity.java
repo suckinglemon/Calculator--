@@ -48,10 +48,7 @@ public class MainActivity extends ActionBarActivity {
         Button buttonAdd = (Button) findViewById(R.id.button_add);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                if (stringBuffer.charAt(stringBuffer.length() - 1) != '+' ||
-                        stringBuffer.charAt(stringBuffer.length() - 1) != '-' ||
-                        stringBuffer.charAt(stringBuffer.length() - 1) != '*' ||
-                        stringBuffer.charAt(stringBuffer.length() - 1) != '/') {
+                if (true) {
                     stringBuffer.append("+");
                     input.setText(stringBuffer.toString());
                 }
@@ -62,8 +59,10 @@ public class MainActivity extends ActionBarActivity {
         Button buttonSub = (Button) findViewById(R.id.button_sub);
         buttonSub.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append("-");
-                input.setText(stringBuffer.toString());
+                if (true) {
+                    stringBuffer.append("-");
+                    input.setText(stringBuffer.toString());
+                }
             }
         });
 
@@ -71,8 +70,10 @@ public class MainActivity extends ActionBarActivity {
         Button buttonMul = (Button) findViewById(R.id.button_mul);
         buttonMul.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append("*");
-                input.setText(stringBuffer.toString());
+                if (true) {
+                    stringBuffer.append("*");
+                    input.setText(stringBuffer.toString());
+                }
             }
         });
 
@@ -80,8 +81,10 @@ public class MainActivity extends ActionBarActivity {
         Button buttonDiv = (Button) findViewById(R.id.button_div);
         buttonDiv.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append("/");
-                input.setText(stringBuffer.toString());
+                if (true) {
+                    stringBuffer.append("/");
+                    input.setText(stringBuffer.toString());
+                }
             }
         });
 
