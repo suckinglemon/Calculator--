@@ -33,11 +33,54 @@ public class Activity_Scientific extends ActionBarActivity {
         input = (TextView) findViewById(R.id.textInput);
         output = (TextView) findViewById(R.id.textOutput);
 
+        setOnClickListeners();
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_scientific, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //Change Activity to Simple Mode if Item selected
+        if (id == R.id.action_simple_mode) {
+            Intent mode = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(mode);
+            return true;
+        }
+
+        /*//Change Activity to Scientific Mode if Item selected
+        if (id == R.id.action_scientific_mode) {
+            Intent mode = new Intent(getApplicationContext(), Activity_Scientific.class);
+            startActivity(mode);
+            return true;
+        }*/
+
+        //Change Activity to Programmer Mode if Item selected
+        if (id == R.id.action_programmer_mode) {
+            Intent mode = new Intent(getApplicationContext(), Activity_Programmer.class);
+            startActivity(mode);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void setOnClickListeners () {
         // OnClickListener for button sinus
         Button buttonSin = (Button) findViewById(R.id.button_sin);
         buttonSin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append("SIN( ");
+                stringBuffer.append("SIN(");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -47,7 +90,7 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonCos = (Button) findViewById(R.id.button_cos);
         buttonCos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append("COS( ");
+                stringBuffer.append("COS(");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -57,7 +100,7 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonTan = (Button) findViewById(R.id.button_tan);
         buttonTan.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append("TAN( ");
+                stringBuffer.append("TAN(");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -67,7 +110,7 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonLn = (Button) findViewById(R.id.button_ln);
         buttonLn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append("LN( ");
+                stringBuffer.append("LN(");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -97,7 +140,7 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonSqrt = (Button) findViewById(R.id.button_sqrt);
         buttonSqrt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" √( ");
+                stringBuffer.append("√(");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -117,7 +160,7 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonOpenBracket = (Button) findViewById(R.id.button_open_bracket);
         buttonOpenBracket.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" ( ");
+                stringBuffer.append("(");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -127,7 +170,7 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonCloseBracket = (Button) findViewById(R.id.button_close_bracket);
         buttonCloseBracket.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" ) ");
+                stringBuffer.append(")");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -167,7 +210,7 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonAdd = (Button) findViewById(R.id.button_add);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" + ");
+                stringBuffer.append("+");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -177,7 +220,7 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonSub = (Button) findViewById(R.id.button_sub);
         buttonSub.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" - ");
+                stringBuffer.append("-");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -187,7 +230,7 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonMul = (Button) findViewById(R.id.button_mul);
         buttonMul.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" * ");
+                stringBuffer.append("*");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -197,7 +240,7 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonDiv = (Button) findViewById(R.id.button_div);
         buttonDiv.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" / ");
+                stringBuffer.append("/");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -342,43 +385,5 @@ public class Activity_Scientific extends ActionBarActivity {
                 output.setText(" ");
             }
         });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_scientific, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //Change Activity to Simple Mode if Item selected
-        if (id == R.id.action_simple_mode) {
-            Intent mode = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(mode);
-            return true;
-        }
-
-        /*//Change Activity to Scientific Mode if Item selected
-        if (id == R.id.action_scientific_mode) {
-            Intent mode = new Intent(getApplicationContext(), Activity_Scientific.class);
-            startActivity(mode);
-            return true;
-        }*/
-
-        //Change Activity to Programmer Mode if Item selected
-        if (id == R.id.action_programmer_mode) {
-            Intent mode = new Intent(getApplicationContext(), Activity_Programmer.class);
-            startActivity(mode);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

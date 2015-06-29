@@ -9,8 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.Stack;
-
 
 public class MainActivity extends ActionBarActivity {
 
@@ -20,9 +18,6 @@ public class MainActivity extends ActionBarActivity {
 
     // StringBuffer for input string generation
     StringBuffer stringBuffer;
-
-    // Stack for amount of chars added per append
-    Stack<Integer> amountOfAppendedChars = new Stack<Integer>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +33,49 @@ public class MainActivity extends ActionBarActivity {
         input = (TextView) findViewById(R.id.textInput);
         output = (TextView) findViewById(R.id.textOutput);
 
+        setOnClickListeners();
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        /*//Change Activity to Simple Mode if Item selected
+        if (id == R.id.action_simple_mode) {
+            Intent mode = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(mode);
+            return true;
+        }*/
+
+        //Change Activity to Scientific Mode if Item selected
+        if (id == R.id.action_scientific_mode) {
+            Intent mode = new Intent(getApplicationContext(), Activity_Scientific.class);
+            startActivity(mode);
+            return true;
+        }
+
+        //Change Activity to Programmer Mode if Item selected
+        if (id == R.id.action_programmer_mode) {
+            Intent mode = new Intent(getApplicationContext(), Activity_Programmer.class);
+            startActivity(mode);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void setOnClickListeners () {
         // OnClickListener for button equal
         Button buttonEqual = (Button) findViewById(R.id.button_eqal);
         buttonEqual.setOnClickListener(new View.OnClickListener() {
@@ -51,9 +89,10 @@ public class MainActivity extends ActionBarActivity {
         Button buttonAdd = (Button) findViewById(R.id.button_add);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" + ");
-                amountOfAppendedChars.push(3);
-                input.setText(stringBuffer.toString());
+                if (true) {
+                    stringBuffer.append("+");
+                    input.setText(stringBuffer.toString());
+                }
             }
         });
 
@@ -61,9 +100,10 @@ public class MainActivity extends ActionBarActivity {
         Button buttonSub = (Button) findViewById(R.id.button_sub);
         buttonSub.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" - ");
-                amountOfAppendedChars.push(3);
-                input.setText(stringBuffer.toString());
+                if (true) {
+                    stringBuffer.append("-");
+                    input.setText(stringBuffer.toString());
+                }
             }
         });
 
@@ -71,8 +111,10 @@ public class MainActivity extends ActionBarActivity {
         Button buttonMul = (Button) findViewById(R.id.button_mul);
         buttonMul.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" * ");
-                input.setText(stringBuffer.toString());
+                if (true) {
+                    stringBuffer.append("*");
+                    input.setText(stringBuffer.toString());
+                }
             }
         });
 
@@ -80,8 +122,10 @@ public class MainActivity extends ActionBarActivity {
         Button buttonDiv = (Button) findViewById(R.id.button_div);
         buttonDiv.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" / ");
-                input.setText(stringBuffer.toString());
+                if (true) {
+                    stringBuffer.append("/");
+                    input.setText(stringBuffer.toString());
+                }
             }
         });
 
@@ -213,44 +257,5 @@ public class MainActivity extends ActionBarActivity {
                 input.setText(stringBuffer.toString());
             }
         });
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        /*//Change Activity to Simple Mode if Item selected
-        if (id == R.id.action_simple_mode) {
-            Intent mode = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(mode);
-            return true;
-        }*/
-
-        //Change Activity to Scientific Mode if Item selected
-        if (id == R.id.action_scientific_mode) {
-            Intent mode = new Intent(getApplicationContext(), Activity_Scientific.class);
-            startActivity(mode);
-            return true;
-        }
-
-        //Change Activity to Programmer Mode if Item selected
-        if (id == R.id.action_programmer_mode) {
-            Intent mode = new Intent(getApplicationContext(), Activity_Programmer.class);
-            startActivity(mode);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }
