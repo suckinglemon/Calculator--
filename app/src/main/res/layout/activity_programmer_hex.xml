@@ -34,7 +34,6 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Programmer"
             android:id="@+id/textOutput"
             android:textSize="30dp"
             android:gravity="top|left"
@@ -62,7 +61,7 @@
             android:id="@+id/button_point"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:visibility="visible" />
+            android:visibility="invisible" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
