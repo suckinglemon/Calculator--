@@ -155,7 +155,7 @@ public class Activity_Programmer extends ActionBarActivity {
         Button buttonAdd = (Button) findViewById(R.id.button_add);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" + ");
+                stringBuffer.append("+");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -165,7 +165,7 @@ public class Activity_Programmer extends ActionBarActivity {
         Button buttonSub = (Button) findViewById(R.id.button_sub);
         buttonSub.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" - ");
+                stringBuffer.append("-");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -175,7 +175,7 @@ public class Activity_Programmer extends ActionBarActivity {
         Button buttonMul = (Button) findViewById(R.id.button_mul);
         buttonMul.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" * ");
+                stringBuffer.append("*");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
@@ -185,7 +185,7 @@ public class Activity_Programmer extends ActionBarActivity {
         Button buttonDiv = (Button) findViewById(R.id.button_div);
         buttonDiv.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append(" / ");
+                stringBuffer.append("/");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
