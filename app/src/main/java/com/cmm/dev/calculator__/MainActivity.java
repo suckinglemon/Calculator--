@@ -54,13 +54,6 @@ public class MainActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        /*//Change Activity to Simple Mode if Item selected
-        if (id == R.id.action_simple_mode) {
-            Intent mode = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(mode);
-            return true;
-        }*/
-
         //Change Activity to Scientific Mode if Item selected
         if (id == R.id.action_scientific_mode) {
             Intent mode = new Intent(getApplicationContext(), Activity_Scientific.class);

@@ -61,13 +61,6 @@ public class Activity_Scientific extends ActionBarActivity {
             return true;
         }
 
-        /*//Change Activity to Scientific Mode if Item selected
-        if (id == R.id.action_scientific_mode) {
-            Intent mode = new Intent(getApplicationContext(), Activity_Scientific.class);
-            startActivity(mode);
-            return true;
-        }*/
-
         //Change Activity to Programmer Mode if Item selected
         if (id == R.id.action_programmer_mode) {
             Intent mode = new Intent(getApplicationContext(), Activity_Programmer.class);
