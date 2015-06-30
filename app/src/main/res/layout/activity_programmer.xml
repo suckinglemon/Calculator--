@@ -55,17 +55,17 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="."
             android:id="@+id/button_point"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:visibility="visible" />
+            android:visibility="invisible" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="0"
             android:id="@+id/button_num_0"
             android:layout_gravity="bottom"
@@ -74,7 +74,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="="
             android:id="@+id/button_eqal"
             android:layout_gravity="bottom"
@@ -83,7 +83,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="+"
             android:id="@+id/button_add"
             android:layout_gravity="bottom"
@@ -101,7 +101,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="1"
             android:id="@+id/button_num_1"
             android:layout_gravity="bottom"
@@ -110,7 +110,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="2"
             android:id="@+id/button_num_2"
             android:layout_gravity="bottom"
@@ -119,7 +119,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="3"
             android:id="@+id/button_num_3"
             android:layout_gravity="bottom"
@@ -128,7 +128,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="-"
             android:id="@+id/button_sub"
             android:layout_gravity="bottom"
@@ -146,7 +146,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="4"
             android:id="@+id/button_num_4"
             android:layout_gravity="bottom"
@@ -155,7 +155,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="5"
             android:id="@+id/button_num_5"
             android:layout_gravity="bottom"
@@ -164,7 +164,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="6"
             android:id="@+id/button_num_6"
             android:layout_gravity="bottom"
@@ -173,7 +173,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="*"
             android:id="@+id/button_mul"
             android:layout_gravity="bottom"
@@ -191,7 +191,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="7"
             android:id="@+id/button_num_7"
             android:layout_gravity="bottom"
@@ -200,7 +200,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="8"
             android:id="@+id/button_num_8"
             android:layout_gravity="bottom"
@@ -209,7 +209,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="9"
             android:id="@+id/button_num_9"
             android:layout_gravity="bottom"
@@ -218,7 +218,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="/"
             android:id="@+id/button_div"
             android:layout_gravity="bottom"
@@ -237,7 +237,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="A"
             android:id="@+id/button_alph_a"
             android:layout_gravity="bottom"
@@ -248,7 +248,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="B"
             android:id="@+id/button_alph_b"
             android:layout_gravity="bottom"
@@ -258,7 +258,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="C"
             android:id="@+id/button_alph_c"
             android:layout_gravity="bottom"
@@ -268,7 +268,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="D"
             android:id="@+id/button_alph_d"
             android:layout_gravity="bottom"
@@ -278,7 +278,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="E"
             android:id="@+id/button_alph_e"
             android:layout_gravity="bottom"
@@ -288,12 +288,13 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="F"
             android:textAllCaps="false"
             android:id="@+id/button_alph_f"
             android:layout_weight="1"
             android:visibility="gone" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -311,7 +312,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="TO DEZ"
             android:id="@+id/button_to_dez"
             android:layout_gravity="bottom"
@@ -321,7 +322,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="TO BIN"
             android:id="@+id/button_to_bin"
             android:layout_gravity="bottom"
@@ -330,7 +331,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="to HEX"
             android:id="@+id/button_to_hex"
             android:layout_gravity="bottom"
@@ -339,7 +340,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="CE"
             android:id="@+id/button_ce"
             android:layout_gravity="bottom"
@@ -348,11 +349,68 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="C"
             android:textAllCaps="false"
             android:id="@+id/button_c"
             android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|bottom"
+        android:id="@+id/linearLayout"
+        android:visibility="visible"
+        android:layout_above="@+id/linearLayout6"
+        android:layout_alignParentStart="true">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:id="@+id/button3"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:visibility="gone" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:id="@+id/button4"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:visibility="invisible" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:id="@+id/button5"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:visibility="invisible" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:text="&lt;-"
+            android:id="@+id/button_history_pre"
+            android:layout_gravity="bottom"
+            android:layout_weight="1" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:text="->"
+            android:textAllCaps="false"
+            android:id="@+id/button_history_nex"
+            android:layout_weight="1" />
     </LinearLayout>
 
 </RelativeLayout>

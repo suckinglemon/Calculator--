@@ -239,7 +239,6 @@ public class Activity_Programmer extends ActionBarActivity {
         });
 
         // Same as Simple
-        /*
         // OnClickListener for button history pre
         Button buttonHistoryPre = (Button) findViewById(R.id.button_history_pre);
         buttonHistoryPre.setOnClickListener(new View.OnClickListener() {
@@ -269,7 +268,6 @@ public class Activity_Programmer extends ActionBarActivity {
                 }
             }
         });
-        */
 
         // OnClickListener for button equal
         Button buttonEqual = (Button) findViewById(R.id.button_eqal);

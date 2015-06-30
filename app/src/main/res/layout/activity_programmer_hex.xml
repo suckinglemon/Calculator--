@@ -311,7 +311,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="TO DEZ"
             android:id="@+id/button_to_dez"
             android:layout_gravity="bottom"
@@ -320,7 +320,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="TO BIN"
             android:id="@+id/button_to_bin"
             android:layout_gravity="bottom"
@@ -329,7 +329,7 @@
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:text="to HEX"
             android:id="@+id/button_to_hex"
             android:layout_gravity="bottom"
@@ -353,6 +353,62 @@
             android:textAllCaps="false"
             android:id="@+id/button_c"
             android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|bottom"
+        android:id="@+id/linearLayout"
+        android:visibility="visible"
+        android:layout_above="@+id/linearLayout6"
+        android:layout_alignParentStart="true">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:id="@+id/button3"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:visibility="gone" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:id="@+id/button4"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:visibility="invisible" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:id="@+id/button5"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:visibility="invisible" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:text="&lt;-"
+            android:id="@+id/button_history_pre"
+            android:layout_gravity="bottom"
+            android:layout_weight="1" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:text="->"
+            android:textAllCaps="false"
+            android:id="@+id/button_history_nex"
+            android:layout_weight="1" />
     </LinearLayout>
 
 </RelativeLayout>
