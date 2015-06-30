@@ -78,16 +78,20 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void setOnClickListeners () {
+    public void setOnClickListeners () {
 
         // OnClickListener for button history pre
         Button buttonHistoryPre = (Button) findViewById(R.id.button_history_pre);
         buttonHistoryPre.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                // Load term from History
-                input.setText(history.getPreElement());
-                // Load result from History
-                output.setText(history.getPreElement());
+                try {
+                    // Load term from History
+                    input.setText(history.getPreElement());
+                    // Load result from History
+                    output.setText("= " + history.getPreElement());
+                } catch (Exception e) {
+                    output.setText(e.getMessage());
+                }
             }
         });
 
@@ -95,10 +99,14 @@ public class MainActivity extends ActionBarActivity {
         Button buttonHistoryNext = (Button) findViewById(R.id.button_history_nex);
         buttonHistoryNext.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                // Load term from History
-                input.setText(history.getNextElement());
-                // Load result from History
-                output.setText("= " + history.getNextElement());
+                try {
+                    // Load term from History
+                    input.setText(history.getNextElement());
+                    // Load result from History
+                    output.setText("= " + history.getNextElement());
+                } catch (Exception e) {
+                    output.setText(e.getMessage());
+                }
             }
         });
 
@@ -106,12 +114,16 @@ public class MainActivity extends ActionBarActivity {
         Button buttonEqual = (Button) findViewById(R.id.button_eqal);
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                // Add term to History
-                history.addElement(stringBuffer.toString());
-                // Solve, set output string and add result to History
-                String result = Interpreter.solve(stringBuffer.toString());
-                output.setText("= " + result);
-                history.addElement(result);
+                try {
+                    // Add term to History
+                    history.addElement(stringBuffer.toString());
+                    // Solve, set output string and add result to History
+                    String result = Interpreter.solve(stringBuffer.toString());
+                    output.setText("= " + result);
+                    history.addElement(result);
+                } catch (Exception e) {
+                    output.setText(e.getMessage());
+                }
             }
         });
 

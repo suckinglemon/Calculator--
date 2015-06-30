@@ -47,15 +47,15 @@ public class History extends ArrayList<String>{
 	}
 
 	public String getNextElement(){
-		if (LAST_ELEMENT < this.size()){
+		if (LAST_ELEMENT < this.size() - 1){
 			LAST_ELEMENT++;
 			return this.get(LAST_ELEMENT);
 		}
-		else if(LAST_ELEMENT == this.size()){
+		else if(LAST_ELEMENT == this.size() - 1){
 			return this.get(LAST_ELEMENT);
 		}
-		else if (LAST_ELEMENT > this.size()){
-			return this.get(this.size());
+		else if (LAST_ELEMENT > this.size() - 1){
+			return this.get(this.size() - 1);
 		}
 		return "";
 	}
@@ -70,7 +70,7 @@ public class History extends ArrayList<String>{
 		if (this.size() == old_size){
 			return false;
 		}
-		LAST_ELEMENT++;
+		LAST_ELEMENT = this.size() - 1;
 		return true;
 	}
 }

@@ -325,8 +325,8 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
-            android:text="ln"
-            android:id="@+id/button_ln"
+            android:text="log"
+            android:id="@+id/button_log"
             android:layout_gravity="bottom"
             android:layout_weight="1"
             android:textStyle="bold" />
@@ -335,8 +335,8 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
-            android:text="log"
-            android:id="@+id/button_log"
+            android:text="->"
+            android:id="@+id/button_history_nex"
             android:layout_gravity="bottom"
             android:layout_weight="1"
             android:textStyle="bold" />
@@ -400,8 +400,8 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
             android:layout_height="40dp"
-            android:text="!"
-            android:id="@+id/button_fak"
+            android:text="&lt;-"
+            android:id="@+id/button_history_pre"
             android:layout_gravity="bottom"
             android:layout_weight="1"
             android:textStyle="bold" />
