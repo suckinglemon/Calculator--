@@ -2,32 +2,60 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Johann\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="C:\Users\Johann\AndroidStudioProjects\Calculator--\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-e5599ed4eed646b298132c96134d660a420d2944.jar" />
-    </item>
-    <item
-        jar="C:\Users\Johann\AndroidStudioProjects\Calculator--\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
-        <dex dex="C:\Users\Johann\AndroidStudioProjects\Calculator--\app\build\intermediates\pre-dexed\debug\classes-145a579b3603850b156a920336d05a7124167d56.jar" />
-    </item>
-    <item
-        jar="C:\Users\Johann\AndroidStudioProjects\Calculator--\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\libs\internal_impl-22.0.0.jar"
+        jar="E:\Dokumente\GitHub\Calculator--\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\libs\internal_impl-22.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="C:\Users\Johann\AndroidStudioProjects\Calculator--\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-8f380f1ce1403fb2167f234e02b5c91d37724edc.jar" />
+        <dex dex="E:\Dokumente\GitHub\Calculator--\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-26219e4647a7dec99aa4151c203fd82e6ae4f3fc.jar" />
     </item>
     <item
-        jar="C:\Users\Johann\AndroidStudioProjects\Calculator--\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\classes.jar"
+        jar="E:\Dokumente\GitHub\Calculator--\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="E:\Dokumente\GitHub\Calculator--\app\build\intermediates\pre-dexed\debug\classes-7a5f27d3c932270ee6e41d3b2e0bc56edc8e50e1.jar" />
+    </item>
+    <item
+        jar="E:\Dokumente\GitHub\Calculator--\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="C:\Users\Johann\AndroidStudioProjects\Calculator--\app\build\intermediates\pre-dexed\debug\classes-060629500af5fe11043b2a29fa1448a7fadeaa1e.jar" />
+        <dex dex="E:\Dokumente\GitHub\Calculator--\app\build\intermediates\pre-dexed\debug\classes-de344de3490fd3404328bd9519c973dd2460a5ab.jar" />
+    </item>
+    <item
+        jar="E:\Dokumente\GitHub\Calculator--\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="E:\Dokumente\GitHub\Calculator--\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-26219e4647a7dec99aa4151c203fd82e6ae4f3fc.jar" />
+    </item>
+    <item
+        jar="E:\Dokumente\GitHub\Calculator--\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="E:\Dokumente\GitHub\Calculator--\app\build\intermediates\pre-dexed\debug\classes-7a5f27d3c932270ee6e41d3b2e0bc56edc8e50e1.jar" />
+    </item>
+    <item
+        jar="C:\Users\Michi\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="E:\Dokumente\GitHub\Calculator--\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-f7112b05b36789098e7f5a4924151cd2367b7acf.jar" />
+    </item>
+    <item
+        jar="E:\Dokumente\GitHub\Calculator--\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="E:\Dokumente\GitHub\Calculator--\app\build\intermediates\pre-dexed\debug\classes-de344de3490fd3404328bd9519c973dd2460a5ab.jar" />
+    </item>
+    <item
+        jar="C:\Users\Michi\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="E:\Dokumente\GitHub\Calculator--\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-f7112b05b36789098e7f5a4924151cd2367b7acf.jar" />
     </item>
 
 </items>
