@@ -1,7 +1,10 @@
 package com.cmm.dev.calculator__;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Stack;
 import java.util.regex.Matcher;
@@ -9,9 +12,9 @@ import java.util.regex.Pattern;
 
 public class Interpreter {
 	// Konstanten für Fehlermeldungen
-	private static final String ERROR = "Ungültige Eingabe!";
-	private static final String PARENTHESIS = "Klammerpaarung inkorrekt!";
-	private static final String DIV_BY_ZERO = "Division durch 0!";
+	private static final String ERROR = "Error! Invalid input";
+	private static final String PARENTHESIS = "Error! Wrong order of brackets";
+	private static final String DIV_BY_ZERO = "Error! Divided by 0!";
 
 	// Konstanten für Links- bzw. Rechtsassoziativität der Operatoren
 	private static final int LEFT_ASSOC = 0;
@@ -82,7 +85,7 @@ public class Interpreter {
 		for (String token : inputTokens) {
 			// Wenn Token = Operator
 			if (isOperator(token)) {
-				// Wenn schon ein Opertator auf dem Stack liegt
+				// Wenn schon ein Operator auf dem Stack liegt
 				while (!stack.empty() && isOperator(stack.peek())) {
 					/*
 					 * Wenn token linksassoziativ ist und niedrigere bzw.
@@ -143,7 +146,7 @@ public class Interpreter {
 
 	// Löst mathematischen Ausdruck
 	public static String solve(String expression) {
-		int precision = 0;
+		int precision = 0;		//Ergebnis mit oder ohne Nachkommaanteil
 		
 		//Division durch Null
 		if(expression.matches(".*[\\dπe]/0[^\\d\\.].*|.*[\\dπe]/0$")){
@@ -153,8 +156,10 @@ public class Interpreter {
 		// Bestimmte Kombinationen ersetzen zur leichteren Berechnung
 		expression = expression.replaceFirst("^\\-", "0-")
 				.replaceAll("\\(\\-", "(0-").replaceAll("\\(\\+", "(0+")
+				.replaceAll("([\\dπe])\\(", "$1*(")
 				.replaceAll("(\\d)π", "$1*π")
 				.replaceAll("(\\d)e", "$1*e")
+				//.replaceAll("([πe])([πe])", "$1*$2")	//Fail
 				.replaceAll("π", String.valueOf(Math.PI))
 				.replaceAll("e", String.valueOf(Math.E));
 		
@@ -177,33 +182,36 @@ public class Interpreter {
 										// aufteilen
 		Stack<String> stack = new Stack<String>();
 
-		for (String str : RPN) {
-			if (!isOperator(str)) { // Operanden werden auf Stack gepuscht
-				stack.push(str);
+		for (String token : RPN) {
+			if (!isOperator(token)) { // Operanden werden auf Stack gepuscht
+				stack.push(token);
 			} else { // Sobald Operator auftaucht werden 2 Operanden vom Stack
 						// genommen und das Ergebnis auf den Stack gepusht
 				double operand2 = Double.parseDouble(stack.pop());
 				double operand1 = Double.parseDouble(stack.pop());
 
-				double result = str.compareTo("+") == 0 ? operand1 + operand2 :
-								str.compareTo("-") == 0 ? operand1 - operand2 :
-								str.compareTo("*") == 0 ? operand1 * operand2 :
-								str.compareTo("/") == 0 ? operand1 / operand2 :
-								str.compareTo("^") == 0 ? Math.pow(operand1, operand2) :
+				double result = token.compareTo("+") == 0 ? operand1 + operand2 :
+								token.compareTo("-") == 0 ? operand1 - operand2 :
+								token.compareTo("*") == 0 ? operand1 * operand2 :
+								token.compareTo("/") == 0 ? operand1 / operand2 :
+								token.compareTo("^") == 0 ? Math.pow(operand1, operand2) :
 								operand1 % operand2;
 
-				stack.push(String.valueOf(result));
-				if (precision == 0) {
+				stack.push(String.valueOf(result));	//Falls in Berechnung Kommazahl rauskommt
+				if (precision == 0) {				//wird precision auf 1 gesetzt
 					if (result - (long) result != 0.0) {
 						precision = 1;
 					}
 				}
 			}
 		}
-		if (precision == 0) {
-			return stack.pop().replaceAll("\\.\\d+", "");
+		//Ergebnis formattieren
+		String fresult = new DecimalFormat("0.0######", DecimalFormatSymbols.getInstance(Locale.ENGLISH)).format(Double.parseDouble(stack.pop()));
+		
+		if (precision == 0) {			//Abschneiden des Nachkommaanteils falls precision = 0
+			return fresult.replaceFirst("\\.\\d+", "");
 		}
-		return stack.pop();
+		return fresult;
 	}
 	/*
 	public static void main(String[] args) {
@@ -215,8 +223,8 @@ public class Interpreter {
 		String term4 = "10%4";
 		String term5 = ".(-12.345+678.90)*0.34-2+432+(-3)";
 		String term6 = "(-3*2)^3";
-		String term7 = "2^(-8+14)";
-		String term8 = "3e/0";
+		String term7 = "7π";
+		String term8 = "8^11*π";
 
 		System.out.println(solve(term1));
 
