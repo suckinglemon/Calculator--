@@ -1,6 +1,7 @@
 package com.cmm.dev.calculator__;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 
 /**
@@ -10,7 +11,7 @@ import java.util.ArrayList;
  *
  */
 @SuppressWarnings("serial")
-public class History extends ArrayList<String>{
+public class History extends ArrayList<String> {
 
 	/**
 	 *
@@ -23,6 +24,16 @@ public class History extends ArrayList<String>{
 
 	public History(){
 		this.add(NO_ENTRIES);
+		LAST_ELEMENT = 0;
+
+		//TODO nur zum Test
+		this.add("1+1");	//index :0
+		this.add("2");
+		this.add("1+2");
+		this.add("3");
+		this.add("1+4");
+		this.add("5");		//index :5
+		LAST_ELEMENT = 6;
 	}
 
 	/**
@@ -30,36 +41,38 @@ public class History extends ArrayList<String>{
 	 */
 
 	/*
-	 * 
+	 *
 	 */
 	public String getPreElement(){
-		if (LAST_ELEMENT < 0){
+		if (LAST_ELEMENT == -1){
 			return NO_ENTRIES;
 		}
 		else if(LAST_ELEMENT == 0){
-			return this.get(LAST_ELEMENT);
+			LAST_ELEMENT--;
+			return this.get(LAST_ELEMENT+1);
 			}
 		else if (LAST_ELEMENT > 0 ){
 			LAST_ELEMENT--;
-			return this.get(LAST_ELEMENT);
+			return this.get(LAST_ELEMENT+1);
 		}
 		return "";
 	}
 
 	public String getNextElement(){
-		if (LAST_ELEMENT < this.size() - 1){
+		if (LAST_ELEMENT < this.size()){
+			if(LAST_ELEMENT < 0){
+				LAST_ELEMENT = 1;
+			}
 			LAST_ELEMENT++;
-			return this.get(LAST_ELEMENT);
+			return this.get(LAST_ELEMENT-1);
 		}
-		else if(LAST_ELEMENT == this.size() - 1){
-			return this.get(LAST_ELEMENT);
+		else if (LAST_ELEMENT == this.size()){
+			LAST_ELEMENT++;
+			return this.get(this.size()-2);
 		}
-		else if (LAST_ELEMENT > this.size() - 1){
-			return this.get(this.size() - 1);
-		}
+		LAST_ELEMENT--;
 		return "";
 	}
-
 
 	public boolean addElement(String s){
 		int old_size = this.size();
@@ -70,7 +83,7 @@ public class History extends ArrayList<String>{
 		if (this.size() == old_size){
 			return false;
 		}
-		LAST_ELEMENT = this.size() - 1;
+		LAST_ELEMENT++;
 		return true;
 	}
 }

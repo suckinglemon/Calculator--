@@ -1,8 +1,8 @@
 package com.cmm.dev.calculator__;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -79,11 +79,11 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 try {
                     // Load term from History
-                    input.setText(history.getPreElement());
-                    // Load result from History
                     output.setText("= " + history.getPreElement());
+                    // Load result from History
+                    input.setText(history.getPreElement());
                 } catch (Exception e) {
-                    output.setText(e.getMessage());
+                    input.setText(e.getMessage());
                 }
             }
         });
@@ -94,11 +94,11 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 try {
                     // Load term from History
-                    input.setText(history.getNextElement());
-                    // Load result from History
                     output.setText("= " + history.getNextElement());
+                    // Load result from History
+                    input.setText(history.getNextElement());
                 } catch (Exception e) {
-                    output.setText(e.getMessage());
+                    input.setText(e.getMessage());
                 }
             }
         });
