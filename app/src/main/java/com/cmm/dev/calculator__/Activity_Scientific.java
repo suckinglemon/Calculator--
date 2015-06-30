@@ -199,7 +199,32 @@ public class Activity_Scientific extends ActionBarActivity {
             }
         });
 
+        /*
+        // TODO Create buttons on GUI xml
         // Same as Simple
+        // OnClickListener for button history pre
+        Button buttonHistoryPre = (Button) findViewById(R.id.button_history_pre);
+        buttonHistoryPre.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                // Load term from History
+                input.setText(history.getPreElement());
+                // Load result from History
+                output.setText(history.getPreElement());
+            }
+        });
+
+        // OnClickListener for button history next
+        Button buttonHistoryNext = (Button) findViewById(R.id.button_history_nex);
+        buttonHistoryNext.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                // Load term from History
+                input.setText(history.getNextElement());
+                // Load result from History
+                output.setText("= " + history.getNextElement());
+            }
+        });
+        */
+
         // OnClickListener for button equal
         Button buttonEqual = (Button) findViewById(R.id.button_eqal);
         buttonEqual.setOnClickListener(new View.OnClickListener() {
@@ -207,8 +232,8 @@ public class Activity_Scientific extends ActionBarActivity {
                 // Add term to History
                 history.addElement(stringBuffer.toString());
                 // Solve, set output string and add result to History
-                String result = stringBuffer.toString();
-                output.setText(result);
+                String result = Interpreter.solve(stringBuffer.toString());
+                output.setText("= " + result);
                 history.addElement(result);
             }
         });

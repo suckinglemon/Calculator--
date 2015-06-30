@@ -98,7 +98,7 @@ public class MainActivity extends ActionBarActivity {
                 // Load term from History
                 input.setText(history.getNextElement());
                 // Load result from History
-                output.setText(history.getNextElement());
+                output.setText("= " + history.getNextElement());
             }
         });
 
@@ -110,7 +110,7 @@ public class MainActivity extends ActionBarActivity {
                 history.addElement(stringBuffer.toString());
                 // Solve, set output string and add result to History
                 String result = Interpreter.solve(stringBuffer.toString());
-                output.setText(result);
+                output.setText("= " + result);
                 history.addElement(result);
             }
         });
@@ -119,10 +119,8 @@ public class MainActivity extends ActionBarActivity {
         Button buttonAdd = (Button) findViewById(R.id.button_add);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                if (true) {
-                    stringBuffer.append("+");
-                    input.setText(stringBuffer.toString());
-                }
+                stringBuffer.append("+");
+                input.setText(stringBuffer.toString());
             }
         });
 
@@ -130,10 +128,8 @@ public class MainActivity extends ActionBarActivity {
         Button buttonSub = (Button) findViewById(R.id.button_sub);
         buttonSub.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                if (true) {
-                    stringBuffer.append("-");
-                    input.setText(stringBuffer.toString());
-                }
+                stringBuffer.append("-");
+                input.setText(stringBuffer.toString());
             }
         });
 
@@ -141,10 +137,8 @@ public class MainActivity extends ActionBarActivity {
         Button buttonMul = (Button) findViewById(R.id.button_mul);
         buttonMul.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                if (true) {
-                    stringBuffer.append("*");
-                    input.setText(stringBuffer.toString());
-                }
+                stringBuffer.append("*");
+                input.setText(stringBuffer.toString());
             }
         });
 
@@ -152,10 +146,8 @@ public class MainActivity extends ActionBarActivity {
         Button buttonDiv = (Button) findViewById(R.id.button_div);
         buttonDiv.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                if (true) {
-                    stringBuffer.append("/");
-                    input.setText(stringBuffer.toString());
-                }
+                stringBuffer.append("/");
+                input.setText(stringBuffer.toString());
             }
         });
 
