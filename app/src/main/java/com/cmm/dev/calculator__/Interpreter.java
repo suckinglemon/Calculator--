@@ -11,6 +11,7 @@ public class Interpreter {
 	// Konstanten für Fehlermeldungen
 	private static final String ERROR = "Ungültige Eingabe!";
 	private static final String PARENTHESIS = "Klammerpaarung inkorrekt!";
+	private static final String DIV_BY_ZERO = "Division durch 0!";
 
 	// Konstanten für Links- bzw. Rechtsassoziativität der Operatoren
 	private static final int LEFT_ASSOC = 0;
@@ -132,7 +133,7 @@ public class Interpreter {
 	// Prüft Eingabe auf mögliche Fehler
 	private static boolean validate(String expression) {
 		Pattern pattern = Pattern
-				.compile("^[\\)\\*/\\^%\\.]|\\([\\+\\-\\*/\\^%\\.]*\\)|\\)\\.*\\(|[\\+\\-\\*/\\^%\\.][\\+\\-\\*/\\^%\\.]|\\d+\\.\\d\\.|[\\+\\-\\(\\*/\\^%\\.]$");
+				.compile("^[\\)\\*/\\^%\\.]|\\([\\+\\-\\*/\\^%\\.]*\\)|\\)\\.*\\(|[\\+\\-\\*/\\^%\\.][\\+\\-\\*/\\^%\\.]|\\d\\.\\d+\\.|[\\+\\-\\(\\*/\\^%\\.]$");
 		Matcher matcher = pattern.matcher(expression);
 		if (matcher.find()) {
 			return false;
@@ -143,16 +144,24 @@ public class Interpreter {
 	// Löst mathematischen Ausdruck
 	public static String solve(String expression) {
 		int precision = 0;
-		if (!validate(expression)) { // Testen auf mögliche Fehler
-			return ERROR;
+		
+		//Division durch Null
+		if(expression.matches(".*\\d/0[^\\d\\.].*")){
+			return DIV_BY_ZERO;
 		}
-
+		
 		// Bestimmte Kombinationen ersetzen zur leichteren Berechnung
 		expression = expression.replaceFirst("^\\-", "0-")
 				.replaceAll("\\(\\-", "(0-").replaceAll("\\(\\+", "(0+")
+				.replaceAll("(\\d)π", "$1*π")
+				.replaceAll("(\\d)e", "$1*e")
 				.replaceAll("π", String.valueOf(Math.PI))
 				.replaceAll("e", String.valueOf(Math.E));
-
+		
+		if (!validate(expression)) { // Testen auf mögliche Fehler
+			return ERROR;
+		}
+		
 		if (expression.matches(".*\\..*")) { // Präsenz von Kommas überprüfen
 			precision = 1;
 		}
@@ -206,7 +215,8 @@ public class Interpreter {
 		String term4 = "10%4";
 		String term5 = ".(-12.345+678.90)*0.34-2+432+(-3)";
 		String term6 = "(-3*2)^3";
-		String term7 = "2^(-8+14";
+		String term7 = "2^(-8+14)";
+		String term8 = "3e";
 
 		System.out.println(solve(term1));
 
@@ -221,5 +231,7 @@ public class Interpreter {
 		System.out.println(solve(term6));
 		
 		System.out.println(solve(term7));
+		
+		System.out.println(solve(term8));
 	}*/
 }
