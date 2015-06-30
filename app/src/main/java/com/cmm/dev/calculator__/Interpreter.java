@@ -9,9 +9,9 @@ import java.util.regex.Pattern;
 
 public class Interpreter {
 	// Konstanten für Fehlermeldungen
-	private static final String ERROR = "Ungültige Eingabe!";
-	private static final String PARENTHESIS = "Klammerpaarung inkorrekt!";
-	private static final String DIV_BY_ZERO = "Division durch 0!";
+	private static final String ERROR = "Error! Invalid input";
+	private static final String PARENTHESIS = "Error! Wrong order of brackets";
+	private static final String DIV_BY_ZERO = "Error! Divided by 0!";
 
 	// Konstanten für Links- bzw. Rechtsassoziativität der Operatoren
 	private static final int LEFT_ASSOC = 0;
@@ -39,10 +39,7 @@ public class Interpreter {
 		if (!isOperator(token)) {
 			throw new IllegalArgumentException("Invalid token: " + token);
 		}
-		if (operators.get(token)[1] == type) {
-			return true;
-		}
-		return false;
+		return operators.get(token)[1] == type;
 	}
 
 	// Vergleicht Prioritäten von token1 und token2
@@ -135,10 +132,7 @@ public class Interpreter {
 		Pattern pattern = Pattern
 				.compile("^[\\)\\*/\\^%\\.]|\\([\\+\\-\\*/\\^%\\.]*\\)|\\)\\.*\\(|[\\+\\-\\*/\\^%\\.][\\+\\-\\*/\\^%\\.]|\\d\\.\\d+\\.|[\\+\\-\\(\\*/\\^%\\.]$");
 		Matcher matcher = pattern.matcher(expression);
-		if (matcher.find()) {
-			return false;
-		}
-		return true;
+		return !matcher.find();
 	}
 
 	// Löst mathematischen Ausdruck
