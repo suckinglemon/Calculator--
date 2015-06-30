@@ -19,6 +19,9 @@ public class MainActivity extends ActionBarActivity {
     // StringBuffer for input string generation
     StringBuffer stringBuffer;
 
+    // History
+    History history = new History();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,12 +79,39 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void setOnClickListeners () {
+
+        // OnClickListener for button history pre
+        Button buttonHistoryPre = (Button) findViewById(R.id.button_history_pre);
+        buttonHistoryPre.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                // Load term from History
+                input.setText(history.getPreElement());
+                // Load result from History
+                output.setText(history.getPreElement());
+            }
+        });
+
+        // OnClickListener for button history next
+        Button buttonHistoryNext = (Button) findViewById(R.id.button_history_nex);
+        buttonHistoryNext.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                // Load term from History
+                input.setText(history.getNextElement());
+                // Load result from History
+                output.setText(history.getNextElement());
+            }
+        });
+
         // OnClickListener for button equal
         Button buttonEqual = (Button) findViewById(R.id.button_eqal);
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                // TODO
-                output.setText("= ");
+                // Add term to History
+                history.addElement(stringBuffer.toString());
+                // Solve, set output string and add result to History
+                String result = Interpreter.solve(stringBuffer.toString());
+                output.setText(result);
+                history.addElement(result);
             }
         });
 

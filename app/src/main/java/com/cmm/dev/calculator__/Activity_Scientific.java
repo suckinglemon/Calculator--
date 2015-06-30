@@ -19,6 +19,9 @@ public class Activity_Scientific extends ActionBarActivity {
     // StringBuffer for input string generation
     StringBuffer stringBuffer;
 
+    // History
+    History history = new History();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -201,8 +204,12 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonEqual = (Button) findViewById(R.id.button_eqal);
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                // TODO
-                output.setText("= ");
+                // Add term to History
+                history.addElement(stringBuffer.toString());
+                // Solve, set output string and add result to History
+                String result = stringBuffer.toString();
+                output.setText(result);
+                history.addElement(result);
             }
         });
 
