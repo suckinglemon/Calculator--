@@ -146,7 +146,7 @@ public class Interpreter {
 		int precision = 0;
 		
 		//Division durch Null
-		if(expression.matches(".*\\d/0[^\\d\\.].*")){
+		if(expression.matches(".*[\\dπe]/0[^\\d\\.].*|.*[\\dπe]/0$")){
 			return DIV_BY_ZERO;
 		}
 		
@@ -205,7 +205,7 @@ public class Interpreter {
 		}
 		return stack.pop();
 	}
-/*
+	/*
 	public static void main(String[] args) {
 
 		// Tests
@@ -216,7 +216,7 @@ public class Interpreter {
 		String term5 = ".(-12.345+678.90)*0.34-2+432+(-3)";
 		String term6 = "(-3*2)^3";
 		String term7 = "2^(-8+14)";
-		String term8 = "3e";
+		String term8 = "3e/0";
 
 		System.out.println(solve(term1));
 
