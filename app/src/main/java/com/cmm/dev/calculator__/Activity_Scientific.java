@@ -76,9 +76,16 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonSin = (Button) findViewById(R.id.button_sin);
         buttonSin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append("SIN(");
-                input.setText(stringBuffer.toString());
-                output.setText(" ");
+                double resultNumeric;
+                String resultString = Interpreter.solve(stringBuffer.toString());
+                try {
+                    resultNumeric = Double.parseDouble(resultString);
+                    output.setText("SIN(" + stringBuffer.toString() + ") = " + Math.sin(resultNumeric));
+                } catch (NumberFormatException nfe) {
+                    output.setText(resultString);
+                } catch (Exception e) {
+                    output.setText("Unknown Error!");
+                }
             }
         });
 
@@ -86,9 +93,16 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonCos = (Button) findViewById(R.id.button_cos);
         buttonCos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append("COS(");
-                input.setText(stringBuffer.toString());
-                output.setText(" ");
+                double resultNumeric;
+                String resultString = Interpreter.solve(stringBuffer.toString());
+                try {
+                    resultNumeric = Double.parseDouble(resultString);
+                    output.setText("COS(" + stringBuffer.toString() + ") = " + Math.cos(resultNumeric));
+                } catch (NumberFormatException nfe) {
+                    output.setText(resultString);
+                } catch (Exception e) {
+                    output.setText("Unknown Error!");
+                }
             }
         });
 
@@ -96,9 +110,16 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonTan = (Button) findViewById(R.id.button_tan);
         buttonTan.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append("TAN(");
-                input.setText(stringBuffer.toString());
-                output.setText(" ");
+                double resultNumeric;
+                String resultString = Interpreter.solve(stringBuffer.toString());
+                try {
+                    resultNumeric = Double.parseDouble(resultString);
+                    output.setText("TAN(" + stringBuffer.toString() + ") = " + Math.tan(resultNumeric));
+                } catch (NumberFormatException nfe) {
+                    output.setText(resultString);
+                } catch (Exception e) {
+                    output.setText("Unknown Error!");
+                }
             }
         });
 
@@ -106,9 +127,33 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonLog = (Button) findViewById(R.id.button_log);
         buttonLog.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer.append("LOG( ");
-                input.setText(stringBuffer.toString());
-                output.setText(" ");
+                double resultNumeric;
+                String resultString = Interpreter.solve(stringBuffer.toString());
+                try {
+                    resultNumeric = Double.parseDouble(resultString);
+                    output.setText("LOG(" + stringBuffer.toString() + ") = " + Math.log10(resultNumeric));
+                } catch (NumberFormatException nfe) {
+                    output.setText(resultString);
+                } catch (Exception e) {
+                    output.setText("Unknown Error!");
+                }
+            }
+        });
+
+        // OnClickListener for button square root
+        Button buttonSqrt = (Button) findViewById(R.id.button_sqrt);
+        buttonSqrt.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                double resultNumeric;
+                String resultString = Interpreter.solve(stringBuffer.toString());
+                try {
+                    resultNumeric = Double.parseDouble(resultString);
+                    output.setText("√(" + stringBuffer.toString() + ") = " + Math.sqrt(resultNumeric));
+                } catch (NumberFormatException nfe) {
+                    output.setText(resultString);
+                } catch (Exception e) {
+                    output.setText("Unknown Error!");
+                }
             }
         });
 
@@ -117,16 +162,6 @@ public class Activity_Scientific extends ActionBarActivity {
         buttonPow.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 stringBuffer.append("^");
-                input.setText(stringBuffer.toString());
-                output.setText(" ");
-            }
-        });
-
-        // OnClickListener for button square root
-        Button buttonSqrt = (Button) findViewById(R.id.button_sqrt);
-        buttonSqrt.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                stringBuffer.append("√(");
                 input.setText(stringBuffer.toString());
                 output.setText(" ");
             }
