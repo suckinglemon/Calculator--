@@ -215,11 +215,11 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 try {
                     // Load term from History
-                    input.setText(history.getPreElement());
-                    // Load result from History
                     output.setText("= " + history.getPreElement());
+                    // Load result from History
+                    input.setText(history.getPreElement());
                 } catch (Exception e) {
-                    output.setText(e.getMessage());
+                    input.setText(e.getMessage());
                 }
             }
         });
@@ -230,11 +230,11 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 try {
                     // Load term from History
-                    input.setText(history.getNextElement());
-                    // Load result from History
                     output.setText("= " + history.getNextElement());
+                    // Load result from History
+                    input.setText(history.getNextElement());
                 } catch (Exception e) {
-                    output.setText(e.getMessage());
+                    input.setText(e.getMessage());
                 }
             }
         });

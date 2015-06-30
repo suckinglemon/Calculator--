@@ -19,6 +19,9 @@ public class Activity_Programmer extends ActionBarActivity {
     // StringBuffer for input string generation
     StringBuffer stringBuffer;
 
+    // History
+    History history = new History();
+
     // Active input mode: 1 = DEZ, 2 = BIN, 3 = HEX
     int inputMode;
 
@@ -236,12 +239,52 @@ public class Activity_Programmer extends ActionBarActivity {
         });
 
         // Same as Simple
+        /*
+        // OnClickListener for button history pre
+        Button buttonHistoryPre = (Button) findViewById(R.id.button_history_pre);
+        buttonHistoryPre.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                try {
+                    // Load term from History
+                    output.setText("= " + history.getPreElement());
+                    // Load result from History
+                    input.setText(history.getPreElement());
+                } catch (Exception e) {
+                    input.setText(e.getMessage());
+                }
+            }
+        });
+
+        // OnClickListener for button history next
+        Button buttonHistoryNext = (Button) findViewById(R.id.button_history_nex);
+        buttonHistoryNext.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                try {
+                    // Load term from History
+                    output.setText("= " + history.getNextElement());
+                    // Load result from History
+                    input.setText(history.getNextElement());
+                } catch (Exception e) {
+                    input.setText(e.getMessage());
+                }
+            }
+        });
+        */
+
         // OnClickListener for button equal
         Button buttonEqual = (Button) findViewById(R.id.button_eqal);
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                // TODO
-                output.setText("= ");
+                try {
+                    // Add term to History
+                    history.addElement(stringBuffer.toString());
+                    // Solve, set output string and add result to History
+                    String result = Interpreter.solve(stringBuffer.toString());
+                    output.setText("= " + result);
+                    history.addElement(result);
+                } catch (Exception e) {
+                    output.setText(e.getMessage());
+                }
             }
         });
 
@@ -309,7 +352,7 @@ public class Activity_Programmer extends ActionBarActivity {
         Button buttonCE = (Button) findViewById(R.id.button_ce);
         buttonCE.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                stringBuffer = new StringBuffer();
+                stringBuffer = new StringBuffer("");
                 input.setText(" ");
                 output.setText(" ");
             }
@@ -424,6 +467,5 @@ public class Activity_Programmer extends ActionBarActivity {
                 output.setText(" ");
             }
         });
-
     }
 }

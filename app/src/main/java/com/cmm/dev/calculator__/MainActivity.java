@@ -73,6 +73,7 @@ public class MainActivity extends ActionBarActivity {
 
     public void setOnClickListeners () {
 
+        // Same as Simple
         // OnClickListener for button history pre
         Button buttonHistoryPre = (Button) findViewById(R.id.button_history_pre);
         buttonHistoryPre.setOnClickListener(new View.OnClickListener() {
@@ -126,6 +127,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append("+");
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -135,6 +137,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append("-");
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -144,6 +147,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append("*");
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -153,6 +157,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append("/");
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -192,6 +197,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('.');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -201,6 +207,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('0');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -210,6 +217,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('1');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -219,6 +227,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('2');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -228,6 +237,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('3');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -237,6 +247,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('4');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -246,6 +257,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('5');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -255,6 +267,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('6');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -264,6 +277,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('7');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -273,6 +287,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('8');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
 
@@ -282,6 +297,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 stringBuffer.append('9');
                 input.setText(stringBuffer.toString());
+                output.setText(" ");
             }
         });
     }
