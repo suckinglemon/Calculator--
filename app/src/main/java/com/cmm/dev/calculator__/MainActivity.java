@@ -84,7 +84,7 @@ public class MainActivity extends ActionBarActivity {
                     // Load result from History
                     input.setText(history.getPreElement());
                 } catch (Exception e) {
-                    input.setText(e.getMessage());
+                    output.setText(e.getMessage());
                 }
             }
         });
@@ -99,7 +99,7 @@ public class MainActivity extends ActionBarActivity {
                     // Load result from History
                     input.setText(history.getNextElement());
                 } catch (Exception e) {
-                    input.setText(e.getMessage());
+                    output.setText(e.getMessage());
                 }
             }
         });
