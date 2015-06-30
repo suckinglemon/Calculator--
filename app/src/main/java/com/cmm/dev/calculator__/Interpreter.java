@@ -57,7 +57,7 @@ public class Interpreter {
 	}
 
 	// Überprüfung der Klammern
-	public static boolean parenthesisChecker(String[] expression) {
+	private static boolean parenthesisChecker(String[] expression) {
 		Stack<String> stack = new Stack<String>();
 
 		for (String token : expression) {
