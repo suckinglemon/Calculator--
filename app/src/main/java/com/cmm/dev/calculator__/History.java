@@ -15,7 +15,7 @@ public class History extends ArrayList<String> {
 	/**
 	 *
 	 */
-	private final String NO_ENTRIES = " ";
+	private final String NO_ENTRIES = "History empty";
 	private int LAST_ELEMENT;
 	/**
 	 * Konstruktor
@@ -84,7 +84,7 @@ public class History extends ArrayList<String> {
 		if (this.size() == old_size){
 			return false;
 		}
-		LAST_ELEMENT++;
+		LAST_ELEMENT = this.size() - 1;
 		return true;
 	}
 }
