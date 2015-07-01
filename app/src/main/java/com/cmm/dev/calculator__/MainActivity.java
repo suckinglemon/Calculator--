@@ -103,7 +103,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 try {
                     // Load result from History
-                    String[] hist = history.getPreElement().split(" ");
+                    String[] hist = history.getPreElement();
                     output.setText("= " + hist[1]);
                     // Load term from History
                     input.setText(hist[0]);
@@ -120,7 +120,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 try {
                     // Load result from History
-                    String[] hist = history.getNextElement().split(" ");
+                    String[] hist = history.getNextElement();
                     output.setText("= " + hist[1]);
                     // Load term from History
                     input.setText(hist[0]);
@@ -139,7 +139,7 @@ public class MainActivity extends ActionBarActivity {
                     // Solve, set output string and add result to History
                     String result = SimpleMode.solve(stringBuffer.toString());
                     output.setText("= " + result);
-                    history.addElement(stringBuffer.toString() + " " + result);
+                    history.addElement(new String[]{stringBuffer.toString(), result});
                 } catch (Exception e) {
                     output.setText("Error!");
                 }
