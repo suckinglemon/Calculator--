@@ -115,11 +115,11 @@ public class MainActivity extends ActionBarActivity {
                     // Add term to History
                     history.addElement(stringBuffer.toString());
                     // Solve, set output string and add result to History
-                    String result = Interpreter.solve(stringBuffer.toString());
+                    String result = SimpleMode.solve(stringBuffer.toString());
                     output.setText("= " + result);
                     history.addElement(result);
                 } catch (Exception e) {
-                    output.setText(e.getMessage());
+                    output.setText("Error! " + e.getMessage());
                 }
             }
         });
