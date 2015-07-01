@@ -87,6 +87,7 @@ public class MainActivity extends ActionBarActivity {
                     output.setText("= " + hist[1]);
                     // Load term from History
                     input.setText(hist[0]);
+                    stringBuffer = new StringBuffer(hist[0]);
                 } catch (Exception e) {
                     output.setText(e.getMessage());
                 }
@@ -103,6 +104,7 @@ public class MainActivity extends ActionBarActivity {
                     output.setText("= " + hist[1]);
                     // Load term from History
                     input.setText(hist[0]);
+                    stringBuffer = new StringBuffer(hist[0]);
                 } catch (Exception e) {
                     output.setText(e.getMessage());
                 }
