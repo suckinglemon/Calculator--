@@ -77,8 +77,9 @@ public class Activity_Scientific extends ActionBarActivity {
         buttonSin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 double resultNumeric;
-                String resultString = Interpreter.solve(stringBuffer.toString());
+                String resultString = " ";
                 try {
+                    resultString = Interpreter.solve(stringBuffer.toString());
                     resultNumeric = Double.parseDouble(resultString);
                     output.setText("SIN(" + stringBuffer.toString() + ") = " + Math.sin(resultNumeric));
                 } catch (NumberFormatException nfe) {
@@ -94,8 +95,9 @@ public class Activity_Scientific extends ActionBarActivity {
         buttonCos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 double resultNumeric;
-                String resultString = Interpreter.solve(stringBuffer.toString());
+                String resultString = " ";
                 try {
+                    resultString = Interpreter.solve(stringBuffer.toString());
                     resultNumeric = Double.parseDouble(resultString);
                     output.setText("COS(" + stringBuffer.toString() + ") = " + Math.cos(resultNumeric));
                 } catch (NumberFormatException nfe) {
@@ -111,8 +113,9 @@ public class Activity_Scientific extends ActionBarActivity {
         buttonTan.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 double resultNumeric;
-                String resultString = Interpreter.solve(stringBuffer.toString());
+                String resultString = " ";
                 try {
+                    resultString = Interpreter.solve(stringBuffer.toString());
                     resultNumeric = Double.parseDouble(resultString);
                     output.setText("TAN(" + stringBuffer.toString() + ") = " + Math.tan(resultNumeric));
                 } catch (NumberFormatException nfe) {
@@ -128,8 +131,9 @@ public class Activity_Scientific extends ActionBarActivity {
         buttonLog.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 double resultNumeric;
-                String resultString = Interpreter.solve(stringBuffer.toString());
+                String resultString = " ";
                 try {
+                    resultString = Interpreter.solve(stringBuffer.toString());
                     resultNumeric = Double.parseDouble(resultString);
                     output.setText("LOG(" + stringBuffer.toString() + ") = " + Math.log10(resultNumeric));
                 } catch (NumberFormatException nfe) {
@@ -145,8 +149,9 @@ public class Activity_Scientific extends ActionBarActivity {
         buttonSqrt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 double resultNumeric;
-                String resultString = Interpreter.solve(stringBuffer.toString());
+                String resultString = " ";
                 try {
+                    resultString = Interpreter.solve(stringBuffer.toString());
                     resultNumeric = Double.parseDouble(resultString);
                     output.setText("√(" + stringBuffer.toString() + ") = " + Math.sqrt(resultNumeric));
                 } catch (NumberFormatException nfe) {
