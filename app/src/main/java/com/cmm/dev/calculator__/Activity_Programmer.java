@@ -267,7 +267,7 @@ public class Activity_Programmer extends ActionBarActivity {
             public void onClick(View arg0) {
                 try {
                     // Load result from History
-                    String[] hist = history.getPreElement().split(" ");
+                    String[] hist = history.getPreElement();
                     output.setText("= " + hist[1]);
                     // Load term from History
                     input.setText(hist[0]);
@@ -284,7 +284,7 @@ public class Activity_Programmer extends ActionBarActivity {
             public void onClick(View arg0) {
                 try {
                     // Load result from History
-                    String[] hist = history.getNextElement().split(" ");
+                    String[] hist = history.getNextElement();
                     output.setText("= " + hist[1]);
                     // Load term from History
                     input.setText(hist[0]);
@@ -313,7 +313,7 @@ public class Activity_Programmer extends ActionBarActivity {
                         result = ProgrammerMode.solveHex(stringBuffer.toString());
                     }
                     output.setText("= " + result);
-                    history.addElement(stringBuffer.toString() + " " + result);
+                    history.addElement(new String[]{stringBuffer.toString(), result});
                 } catch (Exception e) {
                     output.setText("Error!");
                 }
