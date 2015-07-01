@@ -9,7 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-
+/**
+ * Created by Johann Neuhauser.
+ * Class for Activity Programmer Mode
+ */
 public class Activity_Programmer extends ActionBarActivity {
 
     // In- / Output
@@ -24,6 +27,7 @@ public class Activity_Programmer extends ActionBarActivity {
 
     // Active input mode: 1 = DEZ, 2 = BIN, 3 = HEX
     int inputMode;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,10 @@ public class Activity_Programmer extends ActionBarActivity {
 
     }
 
+    /**
+     * Created by Johann Neuhauser.
+     * Method for options menu that is called when activity are created
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -56,6 +64,10 @@ public class Activity_Programmer extends ActionBarActivity {
         return true;
     }
 
+    /**
+     * Created by Johann Neuhauser.
+     * Method for options menu that is called when one item are selected
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -146,6 +158,10 @@ public class Activity_Programmer extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Created by Johann Neuhauser.
+     * Method for setting on click listeners
+     */
     private void setOnClickListeners () {
 
         // OnClickListener for button to dez

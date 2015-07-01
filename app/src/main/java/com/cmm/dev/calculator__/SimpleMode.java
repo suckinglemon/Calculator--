@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by Johann on 01.07.2015.
+ * Created by Maxi Dufter.
  */
 public class SimpleMode {
 

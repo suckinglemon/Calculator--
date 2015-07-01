@@ -3,7 +3,7 @@ package com.cmm.dev.calculator__;
 import java.util.StringTokenizer;
 
 /**
- * Created by Johann on 01.07.2015.
+ * Created by Maxi Dufter.
  */
 public class ProgrammerMode extends SimpleMode {
 
