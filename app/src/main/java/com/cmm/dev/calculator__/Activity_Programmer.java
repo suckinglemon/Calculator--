@@ -20,7 +20,7 @@ public class Activity_Programmer extends ActionBarActivity {
     StringBuffer stringBuffer;
 
     // History
-    History history = new History();
+    History history;
 
     // Active input mode: 1 = DEZ, 2 = BIN, 3 = HEX
     int inputMode;
@@ -38,6 +38,9 @@ public class Activity_Programmer extends ActionBarActivity {
         // load TextView from layout
         input = (TextView) findViewById(R.id.textInput);
         output = (TextView) findViewById(R.id.textOutput);
+
+        // New History
+        history = new History();
 
         // Set standard input mode
         inputMode = 1;
@@ -86,6 +89,9 @@ public class Activity_Programmer extends ActionBarActivity {
             input = (TextView) findViewById(R.id.textInput);
             output = (TextView) findViewById(R.id.textOutput);
 
+            // New History
+            history = new History();
+
             inputMode = 1;
 
             setOnClickListeners ();
@@ -105,6 +111,9 @@ public class Activity_Programmer extends ActionBarActivity {
             input = (TextView) findViewById(R.id.textInput);
             output = (TextView) findViewById(R.id.textOutput);
 
+            // New History
+            history = new History();
+
             inputMode = 2;
 
             setOnClickListeners ();
@@ -123,6 +132,9 @@ public class Activity_Programmer extends ActionBarActivity {
             // load TextView from layout
             input = (TextView) findViewById(R.id.textInput);
             output = (TextView) findViewById(R.id.textOutput);
+
+            // New History
+            history = new History();
 
             inputMode = 3;
 

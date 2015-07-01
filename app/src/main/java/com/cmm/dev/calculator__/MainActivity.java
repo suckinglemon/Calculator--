@@ -20,7 +20,7 @@ public class MainActivity extends ActionBarActivity {
     StringBuffer stringBuffer;
 
     // History
-    History history = new History();
+    History history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,9 @@ public class MainActivity extends ActionBarActivity {
         // load TextView from layout
         input = (TextView) findViewById(R.id.textInput);
         output = (TextView) findViewById(R.id.textOutput);
+
+        // New History
+        history = new History();
 
         setOnClickListeners();
 
