@@ -84,7 +84,7 @@ public class MainActivity extends ActionBarActivity {
                 try {
                     // Load result from History
                     String[] hist = history.getPreElement().split(" ");
-                    output.setText(hist[1]);
+                    output.setText("= " + hist[1]);
                     // Load term from History
                     input.setText(hist[0]);
                 } catch (Exception e) {
@@ -100,7 +100,7 @@ public class MainActivity extends ActionBarActivity {
                 try {
                     // Load result from History
                     String[] hist = history.getNextElement().split(" ");
-                    output.setText(hist[1]);
+                    output.setText("= " + hist[1]);
                     // Load term from History
                     input.setText(hist[0]);
                 } catch (Exception e) {
