@@ -152,12 +152,10 @@ public class Activity_Programmer extends ActionBarActivity {
         Button buttonToDez = (Button) findViewById(R.id.button_to_dez);
         buttonToDez.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                if (inputMode == 1) {
-                    output.setText("= from dez to dez");
-                } else if (inputMode == 2) {
-                    output.setText("= from bin to dez");
-                } else if (inputMode == 3) {
-                    output.setText("= from hex to dez");
+                try {
+                    output.setText("= " + ProgrammerMode.toDec(inputMode, stringBuffer.toString()));
+                } catch (Exception e) {
+                    output.setText("Error!");
                 }
             }
         });
@@ -166,12 +164,10 @@ public class Activity_Programmer extends ActionBarActivity {
         Button buttonToBin = (Button) findViewById(R.id.button_to_bin);
         buttonToBin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                if (inputMode == 1) {
-                    output.setText("= from dez to bin");
-                } else if (inputMode == 2) {
-                    output.setText("= from bin to bin");
-                } else if (inputMode == 3) {
-                    output.setText("= from hex to bin");
+                try {
+                    output.setText("= " + ProgrammerMode.toBin(inputMode, stringBuffer.toString()));
+                } catch (Exception e) {
+                    output.setText("Error!");
                 }
             }
         });
@@ -180,12 +176,10 @@ public class Activity_Programmer extends ActionBarActivity {
         Button buttonToHex = (Button) findViewById(R.id.button_to_hex);
         buttonToHex.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                if (inputMode == 1) {
-                    output.setText("= from dez to hex");
-                } else if (inputMode == 2) {
-                    output.setText("= from bin to hex");
-                } else if (inputMode == 3) {
-                    output.setText("= from hex to hex");
+                try {
+                    output.setText("= " + ProgrammerMode.toHex(inputMode, stringBuffer.toString()));
+                } catch (Exception e) {
+                    output.setText("Error!");
                 }
             }
         });
@@ -261,7 +255,7 @@ public class Activity_Programmer extends ActionBarActivity {
                     // Load result from History
                     input.setText(history.getPreElement());
                 } catch (Exception e) {
-                    output.setText(e.getMessage());
+                    output.setText("Error!");
                 }
             }
         });
@@ -276,7 +270,7 @@ public class Activity_Programmer extends ActionBarActivity {
                     // Load result from History
                     input.setText(history.getNextElement());
                 } catch (Exception e) {
-                    output.setText(e.getMessage());
+                    output.setText("Error!");
                 }
             }
         });
@@ -285,15 +279,26 @@ public class Activity_Programmer extends ActionBarActivity {
         Button buttonEqual = (Button) findViewById(R.id.button_eqal);
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                String result = " ";
                 try {
                     // Add term to History
                     history.addElement(stringBuffer.toString());
-                    // Solve, set output string and add result to History
-                    String result = Interpreter.solve(stringBuffer.toString());
+
+                    // Solve, set output string and add result to History for each input mode
+                    if (inputMode == 1) {
+                        result = ProgrammerMode.solve(stringBuffer.toString());
+                    }
+                    else if (inputMode == 2) {
+                        result = ProgrammerMode.solveBin(stringBuffer.toString());
+                    }
+
+                    else if (inputMode == 3) {
+                        result = ProgrammerMode.solveHex(stringBuffer.toString());
+                    }
                     output.setText("= " + result);
                     history.addElement(result);
                 } catch (Exception e) {
-                    output.setText(e.getMessage());
+                    output.setText("Error!");
                 }
             }
         });

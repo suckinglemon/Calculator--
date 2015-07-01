@@ -88,7 +88,7 @@ public class Activity_Scientific extends ActionBarActivity {
                 } catch (NumberFormatException nfe) {
                     output.setText(resultString);
                 } catch (Exception e) {
-                    output.setText("Unknown Error!");
+                    output.setText("Error!");
                 }
             }
         });
@@ -106,7 +106,7 @@ public class Activity_Scientific extends ActionBarActivity {
                 } catch (NumberFormatException nfe) {
                     output.setText(resultString);
                 } catch (Exception e) {
-                    output.setText("Unknown Error!");
+                    output.setText("Error!");
                 }
             }
         });
@@ -124,7 +124,7 @@ public class Activity_Scientific extends ActionBarActivity {
                 } catch (NumberFormatException nfe) {
                     output.setText(resultString);
                 } catch (Exception e) {
-                    output.setText("Unknown Error!");
+                    output.setText("Error!");
                 }
             }
         });
@@ -142,7 +142,7 @@ public class Activity_Scientific extends ActionBarActivity {
                 } catch (NumberFormatException nfe) {
                     output.setText(resultString);
                 } catch (Exception e) {
-                    output.setText("Unknown Error!");
+                    output.setText("Error!");
                 }
             }
         });
@@ -160,7 +160,7 @@ public class Activity_Scientific extends ActionBarActivity {
                 } catch (NumberFormatException nfe) {
                     output.setText(resultString);
                 } catch (Exception e) {
-                    output.setText("Unknown Error!");
+                    output.setText("Error!");
                 }
             }
         });
@@ -227,7 +227,7 @@ public class Activity_Scientific extends ActionBarActivity {
                     // Load result from History
                     input.setText(history.getPreElement());
                 } catch (Exception e) {
-                    output.setText(e.getMessage());
+                    output.setText("Error!");
                 }
             }
         });
@@ -242,7 +242,7 @@ public class Activity_Scientific extends ActionBarActivity {
                     // Load result from History
                     input.setText(history.getNextElement());
                 } catch (Exception e) {
-                    output.setText(e.getMessage());
+                    output.setText("Error!");
                 }
             }
         });
@@ -259,7 +259,7 @@ public class Activity_Scientific extends ActionBarActivity {
                     output.setText("= " + result);
                     history.addElement(result);
                 } catch (Exception e) {
-                    output.setText(e.getMessage());
+                    output.setText("Error!");
                 }
             }
         });
