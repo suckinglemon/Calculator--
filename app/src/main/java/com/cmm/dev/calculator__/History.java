@@ -15,7 +15,7 @@ public class History extends ArrayList<String> {
 	/**
 	 *
 	 */
-	private final String NO_ENTRIES = "keine Eintraege";
+	private final String NO_ENTRIES = " ";
 	private int LAST_ELEMENT;
 	/**
 	 * Konstruktor
@@ -25,6 +25,7 @@ public class History extends ArrayList<String> {
 		this.add(NO_ENTRIES);
 		LAST_ELEMENT = 0;
 
+		/*
 		//TODO nur zum Test
 		this.add("1+1");	//index :0
 		this.add("2");
@@ -33,6 +34,7 @@ public class History extends ArrayList<String> {
 		this.add("1+4");
 		this.add("5");		//index :5
 		LAST_ELEMENT = 6;
+		*/
 	}
 
 	/**

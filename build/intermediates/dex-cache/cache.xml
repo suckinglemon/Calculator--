@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Johann\AndroidStudioProjects\Calculator--\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\classes.jar"
+        jar="C:\Users\Johann\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="C:\Users\Johann\AndroidStudioProjects\Calculator--\app\build\intermediates\pre-dexed\debug\classes-060629500af5fe11043b2a29fa1448a7fadeaa1e.jar" />
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="C:\Users\Johann\AndroidStudioProjects\Calculator--\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-e5599ed4eed646b298132c96134d660a420d2944.jar" />
     </item>
     <item
         jar="C:\Users\Johann\AndroidStudioProjects\Calculator--\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\libs\internal_impl-22.0.0.jar"
@@ -16,11 +16,11 @@
         <dex dex="C:\Users\Johann\AndroidStudioProjects\Calculator--\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-8f380f1ce1403fb2167f234e02b5c91d37724edc.jar" />
     </item>
     <item
-        jar="C:\Users\Johann\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jar="C:\Users\Johann\AndroidStudioProjects\Calculator--\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="C:\Users\Johann\AndroidStudioProjects\Calculator--\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-e5599ed4eed646b298132c96134d660a420d2944.jar" />
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="C:\Users\Johann\AndroidStudioProjects\Calculator--\app\build\intermediates\pre-dexed\debug\classes-060629500af5fe11043b2a29fa1448a7fadeaa1e.jar" />
     </item>
     <item
         jar="C:\Users\Johann\AndroidStudioProjects\Calculator--\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\jars\classes.jar"
