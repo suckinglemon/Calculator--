@@ -222,12 +222,13 @@ public class Activity_Scientific extends ActionBarActivity {
         buttonHistoryPre.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 try {
-                    // Load term from History
-                    output.setText("= " + history.getPreElement());
                     // Load result from History
-                    input.setText(history.getPreElement());
+                    String[] hist = history.getPreElement().split(" ");
+                    output.setText(hist[1]);
+                    // Load term from History
+                    input.setText(hist[0]);
                 } catch (Exception e) {
-                    output.setText("Error!");
+                    output.setText(e.getMessage());
                 }
             }
         });
@@ -237,12 +238,13 @@ public class Activity_Scientific extends ActionBarActivity {
         buttonHistoryNext.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 try {
-                    // Load term from History
-                    output.setText("= " + history.getNextElement());
                     // Load result from History
-                    input.setText(history.getNextElement());
+                    String[] hist = history.getNextElement().split(" ");
+                    output.setText(hist[1]);
+                    // Load term from History
+                    input.setText(hist[0]);
                 } catch (Exception e) {
-                    output.setText("Error!");
+                    output.setText(e.getMessage());
                 }
             }
         });
@@ -252,14 +254,13 @@ public class Activity_Scientific extends ActionBarActivity {
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 try {
-                    // Add term to History
-                    history.addElement(stringBuffer.toString());
                     // Solve, set output string and add result to History
                     String result = Interpreter.solve(stringBuffer.toString());
                     output.setText("= " + result);
-                    history.addElement(result);
+                    // Add term to History
+                    history.addElement(stringBuffer.toString() + " " + result);
                 } catch (Exception e) {
-                    output.setText("Error!");
+                    output.setText(e.getMessage());
                 }
             }
         });

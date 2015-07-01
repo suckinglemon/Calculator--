@@ -1,6 +1,6 @@
 package com.cmm.dev.calculator__;
 
-import java.util.ArrayList;
+import java.util.TreeMap;
 
 
 /**
@@ -10,20 +10,20 @@ import java.util.ArrayList;
  *
  */
 @SuppressWarnings("serial")
-public class History extends ArrayList<String> {
+public class History extends TreeMap<Integer, String> {
 
-	/**
-	 *
-	 */
-	private final String NO_ENTRIES = "History empty";
-	private int LAST_ELEMENT;
-	/**
-	 * Konstruktor
-	 */
+    /**
+     *
+     */
+    private static final String NO_ENTRIES = "No Entries!";
+    private int CURR_ELEMENT;
+    /**
+     * Konstruktor
+     */
 
-	public History(){
-		this.add(NO_ENTRIES);
-		LAST_ELEMENT = 0;
+    public History(){
+        this.put(0, " ");
+        CURR_ELEMENT = -1;
 
 		/*
 		//TODO nur zum Test
@@ -35,56 +35,42 @@ public class History extends ArrayList<String> {
 		this.add("5");		//index :5
 		LAST_ELEMENT = 6;
 		*/
-	}
+    }
 
-	/**
-	 * Methoden
-	 */
+    /**
+     * Methoden
+     */
 
 	/*
 	 *
 	 */
-	public String getPreElement(){
-		if (LAST_ELEMENT == -1){
-			return NO_ENTRIES;
-		}
-		else if(LAST_ELEMENT == 0){
-			LAST_ELEMENT--;
-			return this.get(LAST_ELEMENT+1);
-			}
-		else if (LAST_ELEMENT > 0 ){
-			LAST_ELEMENT--;
-			return this.get(LAST_ELEMENT+1);
-		}
-		return "";
-	}
+    public String getPreElement() {
+        if (CURR_ELEMENT == -1) {
+            return NO_ENTRIES;
+        }
+        if (CURR_ELEMENT > 1) {
+            CURR_ELEMENT--;
+        }
+        return this.get(CURR_ELEMENT);
+    }
 
-	public String getNextElement(){
-		if (LAST_ELEMENT < this.size()){
-			if(LAST_ELEMENT < 0){
-				LAST_ELEMENT = 1;
-			}
-			LAST_ELEMENT++;
-			return this.get(LAST_ELEMENT-1);
-		}
-		else if (LAST_ELEMENT == this.size()){
-			LAST_ELEMENT++;
-			return this.get(this.size()-2);
-		}
-		LAST_ELEMENT--;
-		return "";
-	}
+    public String getNextElement(){
+        if (CURR_ELEMENT == -1) {
+            return NO_ENTRIES;
+        }
+        if(this.lastKey() !=CURR_ELEMENT){
+            CURR_ELEMENT++;
+        }
+        return this.get(CURR_ELEMENT);
+    }
 
-	public boolean addElement(String s){
-		int old_size = this.size();
-		if(this.get(0).equals(NO_ENTRIES)){
-			this.remove(0);
-		}
-		super.add(s);
-		if (this.size() == old_size){
-			return false;
-		}
-		LAST_ELEMENT = this.size() - 1;
-		return true;
-	}
+    public void addElement(String s){
+        if(CURR_ELEMENT == -1){
+            CURR_ELEMENT = 1;
+        }
+        else {
+            CURR_ELEMENT = this.lastKey() + 1;
+        }
+        this.put(CURR_ELEMENT, s);
+    }
 }
