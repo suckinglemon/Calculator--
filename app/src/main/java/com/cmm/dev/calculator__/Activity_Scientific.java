@@ -94,17 +94,19 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonSin = (Button) findViewById(R.id.button_sin);
         buttonSin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                double resultNumeric;
+                String resultFinal = " ";
                 String resultString = " ";
                 try {
                     resultString = Interpreter.solve(stringBuffer.toString());
-                    resultNumeric = Double.parseDouble(resultString);
-                    output.setText("SIN(" + stringBuffer.toString() + ") = " + Math.sin(resultNumeric));
+                    resultFinal =  "SIN(" + stringBuffer.toString() + ") = " + Math.sin(Double.parseDouble(resultString));
+                    output.setText(resultFinal);
                 } catch (NumberFormatException nfe) {
                     output.setText(resultString);
                 } catch (Exception e) {
                     output.setText("Error!");
                 }
+                //Add to History
+                history.addElement(new String[]{stringBuffer.toString(), resultFinal});
             }
         });
 
@@ -112,17 +114,19 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonCos = (Button) findViewById(R.id.button_cos);
         buttonCos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                double resultNumeric;
+                String resultFinal = " ";
                 String resultString = " ";
                 try {
                     resultString = Interpreter.solve(stringBuffer.toString());
-                    resultNumeric = Double.parseDouble(resultString);
-                    output.setText("COS(" + stringBuffer.toString() + ") = " + Math.cos(resultNumeric));
+                    resultFinal =  "COS(" + stringBuffer.toString() + ") = " + Math.cos(Double.parseDouble(resultString));
+                    output.setText(resultFinal);
                 } catch (NumberFormatException nfe) {
                     output.setText(resultString);
                 } catch (Exception e) {
                     output.setText("Error!");
                 }
+                //Add to History
+                history.addElement(new String[]{stringBuffer.toString(), resultFinal});
             }
         });
 
@@ -130,17 +134,19 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonTan = (Button) findViewById(R.id.button_tan);
         buttonTan.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                double resultNumeric;
+                String resultFinal = " ";
                 String resultString = " ";
                 try {
                     resultString = Interpreter.solve(stringBuffer.toString());
-                    resultNumeric = Double.parseDouble(resultString);
-                    output.setText("TAN(" + stringBuffer.toString() + ") = " + Math.tan(resultNumeric));
+                    resultFinal =  "TAN(" + stringBuffer.toString() + ") = " + Math.tan(Double.parseDouble(resultString));
+                    output.setText(resultFinal);
                 } catch (NumberFormatException nfe) {
                     output.setText(resultString);
                 } catch (Exception e) {
                     output.setText("Error!");
                 }
+                //Add to History
+                history.addElement(new String[]{stringBuffer.toString(), resultFinal});
             }
         });
 
@@ -148,17 +154,19 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonLog = (Button) findViewById(R.id.button_log);
         buttonLog.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                double resultNumeric;
+                String resultFinal = " ";
                 String resultString = " ";
                 try {
                     resultString = Interpreter.solve(stringBuffer.toString());
-                    resultNumeric = Double.parseDouble(resultString);
-                    output.setText("LOG(" + stringBuffer.toString() + ") = " + Math.log10(resultNumeric));
+                    resultFinal =  "LOG(" + stringBuffer.toString() + ") = " + Math.log10(Double.parseDouble(resultString));
+                    output.setText(resultFinal);
                 } catch (NumberFormatException nfe) {
                     output.setText(resultString);
                 } catch (Exception e) {
                     output.setText("Error!");
                 }
+                //Add to History
+                history.addElement(new String[]{stringBuffer.toString(), resultFinal});
             }
         });
 
@@ -166,17 +174,19 @@ public class Activity_Scientific extends ActionBarActivity {
         Button buttonSqrt = (Button) findViewById(R.id.button_sqrt);
         buttonSqrt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                double resultNumeric;
+                String resultFinal = " ";
                 String resultString = " ";
                 try {
                     resultString = Interpreter.solve(stringBuffer.toString());
-                    resultNumeric = Double.parseDouble(resultString);
-                    output.setText("√(" + stringBuffer.toString() + ") = " + Math.sqrt(resultNumeric));
+                    resultFinal =  "√(" + stringBuffer.toString() + ") = " + Math.sqrt(Double.parseDouble(resultString));
+                    output.setText(resultFinal);
                 } catch (NumberFormatException nfe) {
                     output.setText(resultString);
                 } catch (Exception e) {
                     output.setText("Error!");
                 }
+                //Add to History
+                history.addElement(new String[]{stringBuffer.toString(), resultFinal});
             }
         });
 
@@ -238,7 +248,7 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 try {
                     // Load result from History
-                    String[] hist = history.getPreElement().split(" ");
+                    String[] hist = history.getPreElement();
                     output.setText("= " + hist[1]);
                     // Load term from History
                     input.setText(hist[0]);
@@ -255,7 +265,7 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 try {
                     // Load result from History
-                    String[] hist = history.getNextElement().split(" ");
+                    String[] hist = history.getNextElement();
                     output.setText("= " + hist[1]);
                     // Load term from History
                     input.setText(hist[0]);
@@ -275,7 +285,7 @@ public class Activity_Scientific extends ActionBarActivity {
                     String result = Interpreter.solve(stringBuffer.toString());
                     output.setText("= " + result);
                     // Add term to History
-                    history.addElement(stringBuffer.toString() + " " + result);
+                    history.addElement(new String[]{stringBuffer.toString(), result});
                 } catch (Exception e) {
                     output.setText(e.getMessage());
                 }
