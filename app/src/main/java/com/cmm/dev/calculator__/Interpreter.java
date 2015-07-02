@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 
 public class Interpreter {
     // Konstanten für Fehlermeldungen
-    private static final String ERROR = "ERROR!";
+    private static final String ERROR = "Error!";
     private static final String PARENTHESIS = "Error! Wrong order of brackets";
     private static final String DIV_BY_ZERO = "Error! Divided by 0!";
 
