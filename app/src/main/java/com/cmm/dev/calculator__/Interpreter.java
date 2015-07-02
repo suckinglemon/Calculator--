@@ -1,5 +1,7 @@
 package com.cmm.dev.calculator__;
 
+//Created by Ivan Posavec
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -130,7 +132,7 @@ public class Interpreter {
     // Prüft Eingabe auf mögliche Fehler
     private static boolean validate(String expression) {
         Pattern pattern = Pattern
-                .compile("^[\\)\\*/\\^%\\.]|\\([\\+\\-\\*/\\^%\\.]*\\)|\\)[\\.\\d]*\\(|[\\+\\-\\*/\\^%\\.][\\+\\-\\*/\\^%\\.]|\\d\\.\\d+\\.|\\)[\\.\\d]+|[πe]\\d|[\\+\\-\\(\\*/\\^%\\.]$");
+                .compile("^[\\)\\*/\\^%\\.]|\\([\\+\\-\\*/\\^%\\.]*\\)|\\)[\\.\\d]*\\(|[\\+\\-\\*/\\^%\\.][\\+\\-\\*/\\^%\\.]|\\d\\.\\d+\\.|\\)[\\.\\d]+|[πe]\\d|[πe][πe]|[\\+\\-\\(\\*/\\^%\\.]$");
         Matcher matcher = pattern.matcher(expression);
         return !matcher.find();
     }
