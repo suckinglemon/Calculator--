@@ -15,7 +15,7 @@ public class History extends TreeMap<Integer, String[]> {
     /**
      *
      */
-    private static final String[] NO_ENTRIES = {"No Entries!", ""};
+    private static final String[] NO_ENTRIES = {"", "No Entries!"};
     private int CURR_ELEMENT;
     /**
      * Konstruktor
