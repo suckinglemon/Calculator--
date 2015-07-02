@@ -9,14 +9,16 @@ public class HistoryTest extends TestCase {
     History testHistory = new History();
 
     public void testaddElement() {
-
+        String[] termResult = {"", ""};
         for(int i=1 ; i <= 30 ; i++){
-            testHistory.addElement(i + "+" + i + "=" + i+i);
+            termResult[0] = (i + "+" + i);
+            termResult[1] = ("=" + i+i);
+            testHistory.addElement(termResult);
             assertEquals (testHistory.size(), i+1);
-            }
+        }
     }
 
-    public void testgetPreElement() throws Exception {
+    public void testgetPreElement(){
 
         int count = testHistory.size();
         for(int i=testHistory.size(); i > 2 ; i--){
