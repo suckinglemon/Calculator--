@@ -25,12 +25,6 @@ public class InterpreterTest extends TestCase {
         String result7 = "64";
         String term8 = "3e^0";
         String result8 = "3.0";
-        String term9 = "1/0";
-        String result9 = "Error! Divided by 0!";
-        String term10 = "1+)*1)";
-        String result10 = "Error! Wrong order of brackets";
-        String term11 = "-+1*3.0";
-        String result11 = "Error!";
 
         //Aufruf und Vergleich
 
@@ -42,27 +36,40 @@ public class InterpreterTest extends TestCase {
         assertEquals(Interpreter.solve(term6), result6);
         assertEquals(Interpreter.solve(term7), result7);
         assertEquals(Interpreter.solve(term8), result8);
-        assertEquals(Interpreter.solve(term9), result9);
-        assertEquals(Interpreter.solve(term10), result10);
-        assertEquals(Interpreter.solve(term11), result11);
 
         // Exceptions
-        String exception1 = "    ";
-        String exception2 = "1§2";
+        String exception1 = "-+1*3.0";
+        String exception1Message = "Error!";
+        String exception2 = "1+)*1)";
+        String exception2Message = "Error! Wrong order of brackets";
+        String exception3 = "1/0";
+        String exception3Message = "Error! Divided by 0!";
 
         try{
             Interpreter.solve(exception1);
             fail();
         }
         catch(IllegalArgumentException e1){
-            Log.d(exception1, "IllegalArgumentException");
+            Log.d(exception1, e1.getMessage());
+            assertTrue(e1.getMessage().equals(exception1Message));
         }
+
         try{
             Interpreter.solve(exception2);
             fail();
         }
         catch(IllegalArgumentException e2){
-            Log.d(exception2, "IllegalArgumentException");
+            Log.d(exception2, e2.getMessage());
+            assertTrue(e2.getMessage().equals(exception2Message));
+        }
+
+        try{
+            Interpreter.solve(exception3);
+            fail();
+        }
+        catch(IllegalArgumentException e3){
+            Log.d(exception3, e3.getMessage());
+            assertTrue(e3.getMessage().equals(exception3Message));
         }
     }
 }
