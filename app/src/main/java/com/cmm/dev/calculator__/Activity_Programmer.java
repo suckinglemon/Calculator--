@@ -273,7 +273,7 @@ public class Activity_Programmer extends ActionBarActivity {
                     input.setText(hist[0]);
                     stringBuffer = new StringBuffer(hist[0]);
                 } catch (Exception e) {
-                    output.setText(e.getMessage());
+                    output.setText("Error!");
                 }
             }
         });
@@ -290,7 +290,7 @@ public class Activity_Programmer extends ActionBarActivity {
                     input.setText(hist[0]);
                     stringBuffer = new StringBuffer(hist[0]);
                 } catch (Exception e) {
-                    output.setText(e.getMessage());
+                    output.setText("Error!");
                 }
             }
         });

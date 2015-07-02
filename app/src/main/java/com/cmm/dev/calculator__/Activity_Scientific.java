@@ -100,13 +100,13 @@ public class Activity_Scientific extends ActionBarActivity {
                     resultString = Interpreter.solve(stringBuffer.toString());
                     resultFinal =  "SIN(" + stringBuffer.toString() + ") = " + Math.sin(Double.parseDouble(resultString));
                     output.setText(resultFinal);
-                } catch (NumberFormatException nfe) {
-                    output.setText(resultString);
+                    //Add to History
+                    history.addElement(new String[]{stringBuffer.toString(), resultFinal});
+                } catch (IllegalArgumentException iae) {
+                    output.setText(iae.getMessage());
                 } catch (Exception e) {
                     output.setText("Error!");
                 }
-                //Add to History
-                history.addElement(new String[]{stringBuffer.toString(), resultFinal});
             }
         });
 
@@ -120,13 +120,13 @@ public class Activity_Scientific extends ActionBarActivity {
                     resultString = Interpreter.solve(stringBuffer.toString());
                     resultFinal =  "COS(" + stringBuffer.toString() + ") = " + Math.cos(Double.parseDouble(resultString));
                     output.setText(resultFinal);
-                } catch (NumberFormatException nfe) {
-                    output.setText(resultString);
+                    //Add to History
+                    history.addElement(new String[]{stringBuffer.toString(), resultFinal});
+                } catch (IllegalArgumentException iae) {
+                    output.setText(iae.getMessage());
                 } catch (Exception e) {
                     output.setText("Error!");
                 }
-                //Add to History
-                history.addElement(new String[]{stringBuffer.toString(), resultFinal});
             }
         });
 
@@ -140,13 +140,13 @@ public class Activity_Scientific extends ActionBarActivity {
                     resultString = Interpreter.solve(stringBuffer.toString());
                     resultFinal =  "TAN(" + stringBuffer.toString() + ") = " + Math.tan(Double.parseDouble(resultString));
                     output.setText(resultFinal);
-                } catch (NumberFormatException nfe) {
-                    output.setText(resultString);
+                    //Add to History
+                    history.addElement(new String[]{stringBuffer.toString(), resultFinal});
+                } catch (IllegalArgumentException iae) {
+                    output.setText(iae.getMessage());
                 } catch (Exception e) {
                     output.setText("Error!");
                 }
-                //Add to History
-                history.addElement(new String[]{stringBuffer.toString(), resultFinal});
             }
         });
 
@@ -160,13 +160,13 @@ public class Activity_Scientific extends ActionBarActivity {
                     resultString = Interpreter.solve(stringBuffer.toString());
                     resultFinal =  "LOG(" + stringBuffer.toString() + ") = " + Math.log10(Double.parseDouble(resultString));
                     output.setText(resultFinal);
-                } catch (NumberFormatException nfe) {
-                    output.setText(resultString);
+                    //Add to History
+                    history.addElement(new String[]{stringBuffer.toString(), resultFinal});
+                } catch (IllegalArgumentException iae) {
+                    output.setText(iae.getMessage());
                 } catch (Exception e) {
                     output.setText("Error!");
                 }
-                //Add to History
-                history.addElement(new String[]{stringBuffer.toString(), resultFinal});
             }
         });
 
@@ -180,13 +180,13 @@ public class Activity_Scientific extends ActionBarActivity {
                     resultString = Interpreter.solve(stringBuffer.toString());
                     resultFinal =  "√(" + stringBuffer.toString() + ") = " + Math.sqrt(Double.parseDouble(resultString));
                     output.setText(resultFinal);
-                } catch (NumberFormatException nfe) {
-                    output.setText(resultString);
+                    //Add to History
+                    history.addElement(new String[]{stringBuffer.toString(), resultFinal});
+                } catch (IllegalArgumentException iae) {
+                    output.setText(iae.getMessage());
                 } catch (Exception e) {
                     output.setText("Error!");
                 }
-                //Add to History
-                history.addElement(new String[]{stringBuffer.toString(), resultFinal});
             }
         });
 
@@ -254,7 +254,7 @@ public class Activity_Scientific extends ActionBarActivity {
                     input.setText(hist[0]);
                     stringBuffer = new StringBuffer(hist[0]);
                 } catch (Exception e) {
-                    output.setText(e.getMessage());
+                    output.setText("Error!");
                 }
             }
         });
@@ -271,7 +271,7 @@ public class Activity_Scientific extends ActionBarActivity {
                     input.setText(hist[0]);
                     stringBuffer = new StringBuffer(hist[0]);
                 } catch (Exception e) {
-                    output.setText(e.getMessage());
+                    output.setText("Error!");
                 }
             }
         });
@@ -286,8 +286,10 @@ public class Activity_Scientific extends ActionBarActivity {
                     output.setText("= " + result);
                     // Add term to History
                     history.addElement(new String[]{stringBuffer.toString(), result});
+                } catch (IllegalArgumentException iae) {
+                    output.setText(iae.getMessage());
                 } catch (Exception e) {
-                    output.setText(e.getMessage());
+                    output.setText("Error!");
                 }
             }
         });
