@@ -249,9 +249,12 @@ public class Activity_Scientific extends ActionBarActivity {
                 try {
                     // Load result from History
                     String[] hist = history.getPreElement();
-                    output.setText("= " + hist[1]);
+                    output.setText(hist[1]);
                     // Load term from History
-                    input.setText(hist[0]);
+                    if (hist[0].equals(""))
+                        input.setText(" ");
+                    else
+                        input.setText(hist[0]);
                     stringBuffer = new StringBuffer(hist[0]);
                 } catch (Exception e) {
                     output.setText("Error!");
@@ -266,9 +269,12 @@ public class Activity_Scientific extends ActionBarActivity {
                 try {
                     // Load result from History
                     String[] hist = history.getNextElement();
-                    output.setText("= " + hist[1]);
+                    output.setText(hist[1]);
                     // Load term from History
-                    input.setText(hist[0]);
+                    if (hist[0].equals(""))
+                        input.setText(" ");
+                    else
+                        input.setText(hist[0]);
                     stringBuffer = new StringBuffer(hist[0]);
                 } catch (Exception e) {
                     output.setText("Error!");
@@ -282,8 +288,8 @@ public class Activity_Scientific extends ActionBarActivity {
             public void onClick(View arg0) {
                 try {
                     // Solve, set output string and add result to History
-                    String result = Interpreter.solve(stringBuffer.toString());
-                    output.setText("= " + result);
+                    String result = "= " + Interpreter.solve(stringBuffer.toString());
+                    output.setText(result);
                     // Add term to History
                     history.addElement(new String[]{stringBuffer.toString(), result});
                 } catch (IllegalArgumentException iae) {

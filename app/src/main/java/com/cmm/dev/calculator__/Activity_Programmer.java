@@ -268,9 +268,12 @@ public class Activity_Programmer extends ActionBarActivity {
                 try {
                     // Load result from History
                     String[] hist = history.getPreElement();
-                    output.setText("= " + hist[1]);
+                    output.setText(hist[1]);
                     // Load term from History
-                    input.setText(hist[0]);
+                    if (hist[0].equals(""))
+                        input.setText(" ");
+                    else
+                        input.setText(hist[0]);
                     stringBuffer = new StringBuffer(hist[0]);
                 } catch (Exception e) {
                     output.setText("Error!");
@@ -285,9 +288,12 @@ public class Activity_Programmer extends ActionBarActivity {
                 try {
                     // Load result from History
                     String[] hist = history.getNextElement();
-                    output.setText("= " + hist[1]);
+                    output.setText(hist[1]);
                     // Load term from History
-                    input.setText(hist[0]);
+                    if (hist[0].equals(""))
+                        input.setText(" ");
+                    else
+                        input.setText(hist[0]);
                     stringBuffer = new StringBuffer(hist[0]);
                 } catch (Exception e) {
                     output.setText("Error!");
@@ -303,16 +309,16 @@ public class Activity_Programmer extends ActionBarActivity {
                 try {
                     // Solve, set output string and add result to History for each input mode
                     if (inputMode == 1) {
-                        result = ProgrammerMode.solve(stringBuffer.toString());
+                        result = "= " + ProgrammerMode.solve(stringBuffer.toString());
                     }
                     else if (inputMode == 2) {
-                        result = ProgrammerMode.solveBin(stringBuffer.toString());
+                        result = "= " + ProgrammerMode.solveBin(stringBuffer.toString());
                     }
 
                     else if (inputMode == 3) {
-                        result = ProgrammerMode.solveHex(stringBuffer.toString());
+                        result = "= " + ProgrammerMode.solveHex(stringBuffer.toString());
                     }
-                    output.setText("= " + result);
+                    output.setText(result);
                     history.addElement(new String[]{stringBuffer.toString(), result});
                 } catch (Exception e) {
                     output.setText("Error!");

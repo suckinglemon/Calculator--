@@ -115,7 +115,7 @@ public class Interpreter {
                 out.add(token);
             }
         }
-        // restliche Operatoren vom Stack nehmen und and out geben
+        // restliche Operatoren vom Stack nehmen und an out geben
         while (!stack.empty()) {
             if (stack.peek().equals("(")) {
                 stack.pop();

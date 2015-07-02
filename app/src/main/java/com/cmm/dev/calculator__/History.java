@@ -65,6 +65,10 @@ public class History extends TreeMap<Integer, String[]> {
     }
 
     public void addElement(String[] s){
+        if (s[0].equals("")) {
+            return;
+        }
+
         if(CURR_ELEMENT == -1){
             CURR_ELEMENT = 1;
         }
