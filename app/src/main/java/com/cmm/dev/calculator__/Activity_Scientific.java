@@ -102,6 +102,8 @@ public class Activity_Scientific extends ActionBarActivity {
                     output.setText(resultFinal);
                     //Add to History
                     history.addElement(new String[]{stringBuffer.toString(), resultFinal});
+                } catch (NumberFormatException nfe) {
+                    output.setText("Error!");
                 } catch (IllegalArgumentException iae) {
                     output.setText(iae.getMessage());
                 } catch (Exception e) {
@@ -122,6 +124,8 @@ public class Activity_Scientific extends ActionBarActivity {
                     output.setText(resultFinal);
                     //Add to History
                     history.addElement(new String[]{stringBuffer.toString(), resultFinal});
+                } catch (NumberFormatException nfe) {
+                    output.setText("Error!");
                 } catch (IllegalArgumentException iae) {
                     output.setText(iae.getMessage());
                 } catch (Exception e) {
@@ -142,6 +146,8 @@ public class Activity_Scientific extends ActionBarActivity {
                     output.setText(resultFinal);
                     //Add to History
                     history.addElement(new String[]{stringBuffer.toString(), resultFinal});
+                } catch (NumberFormatException nfe) {
+                    output.setText("Error!");
                 } catch (IllegalArgumentException iae) {
                     output.setText(iae.getMessage());
                 } catch (Exception e) {
@@ -162,6 +168,8 @@ public class Activity_Scientific extends ActionBarActivity {
                     output.setText(resultFinal);
                     //Add to History
                     history.addElement(new String[]{stringBuffer.toString(), resultFinal});
+                } catch (NumberFormatException nfe) {
+                    output.setText("Error!");
                 } catch (IllegalArgumentException iae) {
                     output.setText(iae.getMessage());
                 } catch (Exception e) {
@@ -182,6 +190,8 @@ public class Activity_Scientific extends ActionBarActivity {
                     output.setText(resultFinal);
                     //Add to History
                     history.addElement(new String[]{stringBuffer.toString(), resultFinal});
+                } catch (NumberFormatException nfe) {
+                    output.setText("Error!");
                 } catch (IllegalArgumentException iae) {
                     output.setText(iae.getMessage());
                 } catch (Exception e) {
