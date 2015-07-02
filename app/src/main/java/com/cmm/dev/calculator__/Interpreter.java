@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 
 public class Interpreter {
     // Konstanten für Fehlermeldungen
-    private static final String ERROR = "Error! Invalid input";
+    private static final String ERROR = "ERROR!";
     private static final String PARENTHESIS = "Error! Wrong order of brackets";
     private static final String DIV_BY_ZERO = "Error! Divided by 0!";
 
@@ -21,12 +21,12 @@ public class Interpreter {
     private static final Map<String, int[]> operators = new HashMap<String, int[]>();
 
     static {
-        operators.put("+", new int[] { 0, LEFT_ASSOC });
-        operators.put("-", new int[] { 0, LEFT_ASSOC });
-        operators.put("*", new int[] { 1, LEFT_ASSOC });
-        operators.put("/", new int[] { 1, LEFT_ASSOC });
-        operators.put("%", new int[] { 1, LEFT_ASSOC });
-        operators.put("^", new int[] { 2, RIGHT_ASSOC });
+        operators.put("+", new int[]{0, LEFT_ASSOC});
+        operators.put("-", new int[]{0, LEFT_ASSOC});
+        operators.put("*", new int[]{1, LEFT_ASSOC});
+        operators.put("/", new int[]{1, LEFT_ASSOC});
+        operators.put("%", new int[]{1, LEFT_ASSOC});
+        operators.put("^", new int[]{2, RIGHT_ASSOC});
     }
 
     // Prüft ob token ein Operator ist
@@ -130,32 +130,34 @@ public class Interpreter {
     // Prüft Eingabe auf mögliche Fehler
     private static boolean validate(String expression) {
         Pattern pattern = Pattern
-                .compile("^[\\)\\*/\\^%\\.]|\\([\\+\\-\\*/\\^%\\.]*\\)|\\)[\\.\\d]*\\(|[\\+\\-\\*/\\^%\\.][\\+\\-\\*/\\^%\\.]|\\d\\.\\d+\\.|\\)[\\.\\d]+|[\\+\\-\\(\\*/\\^%\\.]$");
+                .compile("^[\\)\\*/\\^%\\.]|\\([\\+\\-\\*/\\^%\\.]*\\)|\\)[\\.\\d]*\\(|[\\+\\-\\*/\\^%\\.][\\+\\-\\*/\\^%\\.]|\\d\\.\\d+\\.|\\)[\\.\\d]+|[πe]\\d|[\\+\\-\\(\\*/\\^%\\.]$");
         Matcher matcher = pattern.matcher(expression);
         return !matcher.find();
     }
 
     // Löst mathematischen Ausdruck
-    public static String solve(String expression) {
-        int precision = 0;		//Ergebnis mit oder ohne Nachkommaanteil
+    public static String solve(String expression) throws IllegalArgumentException {
+        int precision = 0;        //Ergebnis mit oder ohne Nachkommaanteil
 
         //Division durch Null
-        if(expression.matches(".*[\\dπe]/0[^\\d\\.].*|.*[\\dπe]/0$")){
-            return DIV_BY_ZERO;
+        if (expression.matches(".*[\\dπe]/0[^\\d\\.].*|.*[\\dπe]/0$")) {
+            throw new IllegalArgumentException(DIV_BY_ZERO);
         }
 
         // Bestimmte Kombinationen ersetzen zur leichteren Berechnung
-        expression = expression.replaceFirst("^\\-", "0-")
+        expression = expression.replaceFirst("^\\-", "0-").replaceFirst("^\\+", "0+")
                 .replaceAll("\\(\\-", "(0-").replaceAll("\\(\\+", "(0+")
                 .replaceAll("([\\dπe])\\(", "$1*(")
                 .replaceAll("(\\d)π", "$1*π")
-                .replaceAll("(\\d)e", "$1*e")
-                .replaceAll("π", String.valueOf(Math.PI))
-                .replaceAll("e", String.valueOf(Math.E));
+                .replaceAll("(\\d)e", "$1*e");
 
         if (!validate(expression)) { // Testen auf mögliche Fehler
-            return ERROR;
+            throw new IllegalArgumentException(ERROR);
         }
+
+        //π und e einsetzen
+        expression = expression.replaceAll("π", String.valueOf(Math.PI))
+                .replaceAll("e", String.valueOf(Math.E));
 
         if (expression.matches(".*\\..*")) { // Präsenz von Kommas überprüfen
             precision = 1;
@@ -165,7 +167,7 @@ public class Interpreter {
         String[] tokens = expression.split("(?<=[\\(\\)\\+\\-*\\/\\^%])|(?=[\\(\\)\\+\\-*\\/\\^%])");
 
         if (!parenthesisChecker(tokens)) { // Überprüfung der Klammern
-            return PARENTHESIS;
+            throw new IllegalArgumentException(PARENTHESIS);
         }
 
         String[] RPN = convert(tokens); // String in Tokens in RPN-Notation
@@ -187,8 +189,8 @@ public class Interpreter {
                                                 token.compareTo("^") == 0 ? Math.pow(operand1, operand2) :
                                                         operand1 % operand2;
 
-                stack.push(String.valueOf(result));	//Falls in Berechnung Kommazahl rauskommt
-                if (precision == 0) {				//wird precision auf 1 gesetzt
+                stack.push(String.valueOf(result));    //Falls in Berechnung Kommazahl rauskommt
+                if (precision == 0) {                //wird precision auf 1 gesetzt
                     if (result - (long) result != 0.0) {
                         precision = 1;
                     }
@@ -202,33 +204,4 @@ public class Interpreter {
         }
         return fresult;
     }
-/*
-    public static void main(String[] args) {
-
-        // Tests
-        String term1 = "(3*2.5)+(7-(8/2))";
-        String term2 = "1+(3*3)";
-        String term3 = "((9+8)*7+((((6/2)-5)*4)+3)-1)";
-        String term4 = "10%4";
-        String term5 = "(-12.345+678.90)*0.34-2+432+(-3)";
-        String term6 = "(-3*2)^3";
-        String term7 = "2^222";
-        String term8 = "8^11*π";
-
-        System.out.println(solve(term1));
-
-        System.out.println(solve(term2));
-
-        System.out.println(solve(term3));
-
-        System.out.println(solve(term4));
-
-        System.out.println(solve(term5));
-
-        System.out.println(solve(term6));
-
-        System.out.println(solve(term7));
-
-        System.out.println(solve(term8));
-    }*/
 }
